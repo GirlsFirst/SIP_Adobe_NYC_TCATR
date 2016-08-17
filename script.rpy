@@ -2,15 +2,16 @@
 
 # Declare images below this line, using the image statement.
 # eg. image eileen happy = "eileen_happy.png"
-
+image lovein normal = "lovein.png"
 # Declare characters used by this game.
 define player_name = Character("#C9C9C9")
 define a= Character(color = "#C9C9C9")
 define z = Character('Trainer', color="#C9C9C9")
-define b = Character("??????", color="#000000")
+define b = Character("??????", color="#000000") 
 define c = Character('Professor Maple', color="#87421F")
-define d= Character("Announcer", color=("#000080")
-
+define d= Character("Announcer", color="#000080")
+define rival_name= Character("#830303")
+define e = Character(color = "#830303")
 
 # The game starts here.
 label start:
@@ -151,7 +152,7 @@ label start:
         jump choice4_2
            
            
-    label choice4_2:
+    label choice4_1:
         
         "You make your way to Colosseum City ready to battle and see trainer's different types of pokemon."
         
@@ -184,7 +185,24 @@ label start:
                     jump choice5_2
                     
                     
-    label choice4_1
+    label choice4_2:
+            
+        "On your way to Lowestof Gym, someone stops you in the middle of the street."
+        
+        a "Hey! You just got here huh?"
+        
+        $ rival_name = renpy.input("What is your rival's name?")
+        
+        $ rival_name = rival_name.strip()
+        
+        $ e = rival_name
+        
+        e " Yeah I did......hold up. Is that a pokeball I see? You finally got one too. I've been itching to battle you this whole time."
+        
+        e "{i}LET'S GO{/i}"
+    
+                
+        
         
         
         
