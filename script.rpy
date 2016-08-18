@@ -283,9 +283,7 @@ label start:
                     
                     a "We barely won that won!"
                     
-                "Send out that big foot Raichu!":
-                    
-            
+                "Send out that big foot Raichu!"
                     
                     
                         
