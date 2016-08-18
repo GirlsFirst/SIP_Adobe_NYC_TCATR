@@ -1,8 +1,15 @@
 ﻿# You can place the script of your game in this file.
 
 # Declare images below this line, using the image statement.
-# eg. image eileen happy = "eileen_happy.png"
-image lovein normal = "lovein.png"
+init:
+    image lovein normal = "lovein2.png"
+    image prof normal = "prof2.png"
+    image road="road.jpg"
+    image city="city.png"
+    image back="back.png"
+    image gym="gym.png"
+    image forest="forest.png"
+    image town="town.jpg"
 # Declare characters used by this game.
 define player_name = Character("#C9C9C9")
 define a= Character(color = "#C9C9C9")
@@ -16,7 +23,10 @@ define e = Character(color = "#830303")
 # The game starts here.
 label start:
 
-    "You walk through Bredon Town, minding your own business, when a large foot knocks you over."
+    
+    show back
+    
+    "You walk through Pritempts Plains minding your own business, when a large foot knocks you over."
     
     "Raising your head you see a Raichu running off into the distance."
                       
@@ -90,8 +100,17 @@ label start:
         jump choice2_name
     
     label choice2_name:
-    
+        
+        show back 
+       
+        show prof normal
+       
+       
+        
+        
         "You raise your head to see an intellectual looking woman grinning back at you."
+       
+     
         
         c "Say, what's yo ur name kiddo?"
         
@@ -134,7 +153,9 @@ label start:
             "I want to takeover my mother's gym.":
             
                 c "Hmm, you've got a lot of work ahead of you trainer. I'd like you to visit Colosseum Gym."
-            
+                
+                hide prof normal
+                
                 jump choice4_1
                 
             "I want to battle my pokemon.":
@@ -148,7 +169,9 @@ label start:
     label choice3_2:
         
         c "Great! Now I'd would love for you to visit Lowestof Gym and battle the pokemon trainers there!"
-           
+        
+        hide prof normal 
+        
         jump choice4_2
            
            
@@ -174,7 +197,7 @@ label start:
                     
                     jump choice5_2
                     
-        "{i}Raichu{/i}":
+        "{i} Leggo Raichu{/i}":
             
                     d "Alright now come on out Novice Eliza!"
                     
@@ -189,6 +212,8 @@ label start:
             
         "On your way to Lowestof Gym, someone stops you in the middle of the street."
         
+        show lovein normal
+        
         a "Hey! You just got here huh?"
         
         $ rival_name = renpy.input("What is your rival's name?")
@@ -200,7 +225,72 @@ label start:
         e " Yeah I did......hold up. Is that a pokeball I see? You finally got one too. I've been itching to battle you this whole time."
         
         e "{i}LET'S GO{/i}"
-    
+        
+        "They send out Luxray and Garchomp"
+        
+        menu: 
+            
+            "Send out our starter!":
+                
+                jump choice5
+            
+            "Send out {i}Based Raichu{/i}.":
+                
+                jump choice5fail
+                
+        label choice5fail:
+            
+            e "I knew you could never beat me!"
+            
+            a "Ugh shut it! Since we were little you've always been a sore winner!"
+            
+            e "The only sore thing should be your pokemon after that butt whoopin!"
+            
+            a "I'm out of here! And I'll get you next time!"
+            
+            e "{i}Sure you will{/i}"
+            
+            hide lovein normal
+            
+            jump choice5done
+            
+        label choice5:
+            
+            e "Dang, how'd you get so good?"
+            
+            a "I had a little practice."
+            
+            e "We'll see how long that practice keeps you ahead of the game!"
+            
+            a "{i}Yeah yeah keep talking, you're such a sore loser.{/i}"
+            
+            e "I don't have time to hang around with softies,{i}ta ta{/i}!"
+            
+            hide lovein normal
+            
+            jump choice5done
+            
+        
+        label choice5_2:
+            
+            d "Up next is Poke Maniac Zack!"
+            
+            "Zack sends out Golbat and Magnemite!"
+            
+            menu:
+                
+                "Send out your holy starter!":
+                    
+                    a "We barely won that won!"
+                    
+                "Send out that big foot Raichu!"
+                    
+                    
+                        
+            
+            
+               
+        
                 
         
         
