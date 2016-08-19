@@ -2,14 +2,15 @@
 
 # Declare images below this line, using the image statement.
 init:
-    image lovein normal = "lovein2.png"
+    image lovein normal = "lovein.png"
     image prof normal = "prof2.png"
     image road="road.jpg"
     image city="city.png"
     image back="back.png"
-    image gym="gym.png"
+    image gym="gym.jpg"
     image forest="forest.png"
     image town="town.jpg"
+    image devin normal ="bugleader.png"
 # Declare characters used by this game.
 define player_name = Character("#C9C9C9")
 define a= Character(color = "#C9C9C9")
@@ -19,8 +20,18 @@ define c = Character('Professor Maple', color="#87421F")
 define d= Character("Announcer", color="#000080")
 define rival_name= Character("#830303")
 define e = Character(color = "#830303")
-
+define f = Character("Devin", color = "006400")
 # The game starts here.
+
+label splashscreen:
+    $ renpy.movie_cutscene('lion.avi')
+    
+    return
+    
+    jump start
+
+
+
 label start:
 
     
@@ -172,6 +183,8 @@ label start:
         
         hide prof normal 
         
+        hide back
+        
         jump choice4_2
            
            
@@ -209,8 +222,12 @@ label start:
                     
                     
     label choice4_2:
-            
+        
+        show road   
+        
         "On your way to Lowestof Gym, someone stops you in the middle of the street."
+        
+       
         
         show lovein normal
         
@@ -252,6 +269,8 @@ label start:
             
             hide lovein normal
             
+            hide road
+            
             jump choice5done
             
         label choice5:
@@ -267,6 +286,8 @@ label start:
             e "I don't have time to hang around with softies,{i}ta ta{/i}!"
             
             hide lovein normal
+            
+            hide road
             
             jump choice5done
             
@@ -284,6 +305,40 @@ label start:
                     a "We barely won that won!"
                     
                 "Send out that big foot Raichu!"
+                
+        label choice5done:
+              
+            show gym
+             
+            show devin normal 
+            
+            a "We're here at the {i}Lowestof Gym{/i} to battle the current Gym Leader, Devin."
+            
+          
+            
+            d "Gym Leader Devin has just sent out Heracross, Vespequien, and Kricketot as his team of Pokemon. Oooh, fierce!"
+            
+            d "Which Pokemon do you want to enter into battle with first?"
+            
+            menu:
+            
+                "Starter Pokemon":
+                
+                    d "Wow! That was heartbreaking. Truly! The winner lost the duel to Gym Leader Devin."
+                    
+                    a "Aw that sucks! I hope I'll do better next time."
+                        
+                "{i}Raichu{i}":
+                
+                    d "Wow! That was spectacular. Amazing! The winner has won the duel and receives a $20 gift card to Apple Bees."  
+                    
+                    a "Woop woop, I'm glad my training paid off."
+                        
+                
+            
+            
+            
+            
                     
                     
                         
@@ -311,4 +366,3 @@ label start:
             
 
         return
-
