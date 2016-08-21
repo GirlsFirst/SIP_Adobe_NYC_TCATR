@@ -14,6 +14,13 @@ init:
     image trainer ="trainer1.png"
     image fighter ="fighter.png"
     image karate ="fighter2.png"
+    image spork smile ="sporksmilesmirk.png"
+    image spork angry ="spork.png"
+    image samurai ="samurai.png"
+    image mom ="mom.png"
+    image home = "home.jpg"
+    image room ="room.jpg"
+    image battle ="mommy.png"
 # Declare characters used by this game.
 define player_name = Character("#C9C9C9")
 define a= Character(color = "#C9C9C9")
@@ -24,14 +31,13 @@ define d= Character("Announcer", color="#000080")
 define rival_name= Character("#830303")
 define e = Character(color = "#830303")
 define f = Character("Devin", color = "006400")
+define s = Character("Electra", color="#FFFF00")
+define t = Character("Takeo", color="#8E2323")
+define m = Character("Mother", color="#7F00FF")
 # The game starts here.
 
 label splashscreen:
-    $ renpy.movie_cutscene('lion.avi')
-    
-    return
-    
-    jump start
+
 
 
 
@@ -120,7 +126,7 @@ label start:
        
      
         
-        c "Say, what's yo ur name kiddo?"
+        c "Say, what's your name kiddo?"
         
         $ player_name = renpy.input("What is your name?")
         
@@ -480,6 +486,8 @@ label start:
 
                     hide gym
                     
+                    hide lovein normal
+                    
                     jump choice9 
 
             label choice8:
@@ -487,6 +495,8 @@ label start:
                 show forest 
                 
                 "On my way to Olempec Town, I ran into whats-their-face."
+                
+                show lovein normal
                 
                 e "Ready for another battle?"
                 
@@ -514,6 +524,10 @@ label start:
                         
                         "I'm out of here"
                         
+                        hide lovein normal
+                        
+                        hide forest
+                        
                         jump choice10
                         
                 
@@ -535,10 +549,520 @@ label start:
                         
                         a "Maybe later if I have time!"
                         
+                        hide lovein normal
+                        
+                        hide forest 
+                        
                         jump choice10
                         
-            #label choice 10, going to Olempec City alone, introduce Spork and battle her..after that is samurai gym!
+            
+            label choice10
+            
+            show mountain
+            
+            a "Let's see... which way do I have to go?"
+            
+            a "I think I have to climb that mountain over there."
+            
+            a "This is gonna be abuse on my legs."
+            
+            "Better get started right now!"
+            
+            show mtown
+            
+            a "That took way too long to get here."
+            
+            a "What is this, some kind of bathhouse town?"
+            
+            show lovein normal
+            
+            e "You know it's really weird when you talk to yourself."
+            
+            e "It almost makes it seem like you have friends!"
+            
+            a "{i}Hah! That was so funny!{/i}"
+            
+            "How did I know they were following me.."
+            
+            e "Think that there is a volcano or somthing underneath the mountain, that's why there are so many bath houses."
+               
+            a "I guess that makes sense.."
+            
+            e "You heading to the gym?"
+            
+            a "Did you think I climbed the mountain to take a bath?"
+            
+            e "Well no.... dang you're so hard to talk to! See you later."
+            
+            hide lovein normal
+            
+            a "........ That was weird."
+            
+            hide mtown
+            
+            show peak
+            
+            a "Okay I'm going to take this gym down!"
+            
+            show spork smile 
+            
+            s "Are you really now?"
+            
+            "Oh dang this lady heard."
+            
+            s "Well you're in for a {i}shock kid{/i}, cause I don't lose easily"
+            
+            s "You ready, let's fight RIGHT NOW!"
+            
+            a "Wait real quick before we start, why are we fighting so high above the ground?"
+            
+            s "Less talking more fighting!"
+            
+            hide spork smile
+            
+            show spork angry
+            
+            d "Gym Leader Electra sent out Raichu, Electabuzz and Emolga."
+            
+                menu:
+                    
+                    "Send out ya starter pokemon":
+                        
+                        "Awww yeah! That was way to easy!"
+                        
+                        jump choice0
+                        
+                    "Send out Raichu":
+                        
+                        "That was really tough since she had a Raichu too."
+                        
+                        jump choice0
+                        
+            label choice0:
+            
+                        hide spork angry
+                        
+                        show spork smile
+                        
+                        s "You really know your stuff kid. You put up alot of {i}resistance{/i}!"
+                        
+                        a "Thank you for taking the time to fight me!"
+                        
+                        s "Stay safe!"
+                        
+                        hide spork smile
+                        
+                        hide peak
+                        
+                        jump choice11
+                    
+                    
+            label choice9:
                 
-            #label choice9 going with love interest to Olempec City and battling Spork, love dialogue and rom com stuff insues....after that is samurai gym!
+                show mountain
+                
+                show lovein normal
+                
+                e "How much longer do we have to walk"
+                
+                e "Are we there yet???"
+                
+                a "Does it look we are there yet?"
+                
+                a "We so obviously have to climb that mountain to get to the gym."
+                
+                a "So stop your belly-aching!"
+                
+                e "Okay Okay"
+                
+                hide mountain 
+                
+                hide lovein normal
+                
+                show mtown
+                
+                show lovein normal
+                
+                a "And here we are!"
+                
+                e "Okay but why are there so many bathtubs?"
+                
+                a "Well I did a little research while we were wallking here, apparently there is a dormant volcano underneath this mountain."
+                
+                e "So they don't have to pay the heat bill, lucky."
+                
+                a "Let's keep going, it looks like Olempec's gym is at the top."
+                
+                hide mountain
+                
+                hide lovein normal
+                
+                show peak
+                
+                show lovein normal
+                
+                a "Why are you shaking like that?"
+                
+                e "Leave me alone, can't you see how high up we are?"
+                
+                a "You afraid of heights or something?"
+                
+                e "As a matter of fact I am! And I'm proud!"
+                
+                e "I think the pokegods never wanted us to be this close to the sky!"
+                
+                b "I'm es-static that you've climbed this high to come see me."
+                
+                b "Ohm...I'm over here kids."
+                
+                "We turned around to see a fashionable lady stading behind us."
+                
+                s "Watts up? I'm this gym's leader Electra."
+                
+                s "I'm shocked to see a couple kids hoping to battle me!"
+                
+                s "Watt are you waiting for? {i} Let's Go!{/i}"
+                
+                e "Wait before you guys start fighting I have a quick question."
+                
+                e "Did you decide to build this gym at the top of a mountain? Maybe that's why you never get any younger visitors!"
+                
+                e "And you seemed like such a {i} grounded {/i} person."
+                
+                show spork angry 
+                
+                s "Tell your friend to be quiet before I throw them off this cliff."
+
+                d "Electra sent out Raichu, Electabuzz and Emolga"
+                
+                menu:
+                    
+                    "Send out your starter!":
+                        
+                        a "Of course I won!"
+                        
+                        jump choice01
+                        
+                    "Send out the Raichu":
+                        
+                        hide spork angry
+                        
+                        show lovein normal
+                        
+                        e "Why would you send out Raichu when she has one?"
+                        
+                        a "I still won, chill out!"
+                        
+                        hide lovein normal
+                        
+                        show spork smile
+                        
+                        s "Is your red-headed friend always like this?"
+                        
+                        a "Pretty much 24/7."
+                        
+                        s "I feel bad for you."
+                        
+                        s "Take care kids!"
+                    
+                        s "It would really {i} hertz{i} my feelings if you didn't come back to visit!"
+                        
+                        hide spork smile
+                        
+                        show lovein normal
+                        
+                        e "If she makes one more pun I might throw up."
+                        
+                        hide peak 
+                        
+                        hide lovein normal
+                        
+                        show templeroad
+                        
+                        show lovein normal
+                        
+                        e "The last place we have to go to is Taketomi Island."
+                        
+                        a "I've always wanted visit this place!"
+                        
+                        e "The place is very ....different."
+                        
+                        e "Well culturally that is."
+                        
+                        a "I'm definelty getting a very different vibe as we come up to the drawbridge."
+                        
+                        e "I heard their gym leader is a samurai or something!"
+                        
+                        a "Okay now I'm really excited!"
+                        
+                        e "Don't get to excited, you still have to beat them."
+                        
+                        a "Chill {i}mom{/i}, I can handle this!"
+                        
+                        hide templeroad 
+                        
+                        hide lovein normal
+                        
+                        show shrine
+                        
+                        show lovein
+                        
+                        a "This place is so cool."
+                        
+                        e "Too much red, it's hurting my eyes!"
+                        
+                        a "How do you do your hair in the morning then?"
+                        
+                        e "..............."
+                        
+                        e "I think we need to find some type of clearing, that's where the gym is."
+                        
+                        a "And how do you know all of this?"
+                        
+                        e " I literally just looked at the billboard that said town map"
+                        
+                        a "Okay then you lead the way!"
+                        
+                        hide shrine
+                        
+                        hide lovein
+                        
+                        show temple
+                        
+                        a "Wow look at this view!"
+                        
+                        a "And I can see the gym from here too!"
+                        
+                        show lovein normal
+                        
+                        a "And you just had to ruin the moment didn't you?"
+                        
+                        e "Quit your {i}gasping{/i} and {i}gawking{/i} and let's go already."
+                        
+                        a "I'm taking note to come here by myself next time."
+                        
+                        hide temple
+                        
+                        hide lovein normal
+                        
+                        show intemple
+                        
+                        "It's so cool."
+                        
+                        e "This place looks decent."
+                        
+                        e "Could use a little bit of interior design."
+                        
+                        a "Okay if this place looks decent, what does your room look like, the Taj Mahal?"
+                        
+                        e "Chill, I was just giving my constructive criticism."
+                        
+                        b "Ahh young love."
+                        
+                        e "First of all, I'm not in love, second of all who said that?"
+                        
+                        a "I am in sound agreement with you on this one!"
+                        
+                        hide lovein normal
+                        
+                        b "If you guys came here to flirt then I kindly ask you to leave."
+                        
+                        a "Listen, {i}whoever you are{/i}, I came to battle and my friend came to nag... I mean tag along."
+                        
+                        show samurai
+                        
+                        o "That's great!, I'm Takeo, and I specialize in fighting pokemon!"
+                        
+                        a "You're really a samurai!"
+                        
+                        o "You thought this place was just a tourist attraction huh?"
+                        
+                        a "No but a samurai, who do you fight in this day and age?"
+                        
+                        o ".........."
+                        
+                        o "My inner demons ¯\_(ツ)_/¯ ."
+                        
+                        o "Alright LET'S GO!"
+                        
+                        d "Gym Leader Takeo sent out Hariyama, Machamp and Hitmontop."
+                        
+                           menu:
+                            
+                            "Send out your starter.":
+                                
+                                "This battle was really hard for some reason!"
+                                
+                                o "I always go down kicking and scratching, or should I say kicking and {i}punching{/i}?"
+                                
+                                "Cue laugh track"
+                                
+                                jump choice13
+                                
+                            "Who's that pokemon? It's {i}Raichu{/i}." :
+                             
+                                a "That was like taking candy from a baby."
+                                
+                                a "Or should I say taking steriods from a weight lifter."
+                                
+                                o "Hey!, You know I would never take any performance enhancing substanc-"
+                                
+                                "Cue laugh track"
+                                
+                                jump choice13
+                                
+                        label choice13:
+                            
+                            
+                            o "Come visit me if you ever need any help kids!"
+                            
+                            o "It gets pretty lonely living out here in a temple."
+                            
+                            hide samurai
+                            
+                            show lovein normal
+                            
+                            e "I fully believe the protein shakes are getting to that guy's head."
+                            
+                            a "Don't mske fun of him, he could hunt you down one day!"
+                            
+                            e "I'd actually love to see him try."
+                            
+                            hide intemple
+                            
+                            hide lovein normal
+                            
+                            show road
+                            
+                            a "We know where the last gym leader is."
+                            
+                            show lovein normal
+                            
+                            e "This has been the moment you've been waiting for!"
+                            
+                            a "Ah I recognize this path more than anyone else."
+                            
+                            e "I guess this is where I drop you?"
+                            
+                            a "Yeah I'll see you ar-"
+                            
+                            e "Listen I've had alot of fun going on this trip with you."
+                            
+                            e "I'm really happy you let me {i} nag{/i} along."
+                            
+                            e "Come see me if you need anything."
+                            
+                            a "Wow they're being surprisingly nice today."
+                            
+                            hide lovein normal 
+                            
+                            hide road
+                            
+                            show home
+                            
+                            "It smells just like I left it, like fresh laundry and cheap perfume."
+                            
+                            b "Since you're back here I guess you're ready to take me on."
+                            
+                            a "Okay this isn't a mistery I know who's talking."
+                            
+                            show mom
+                            
+                            m "Do you know how much I've missed you?"
+                            
+                            a "I could take a guess."
+                            
+                            m "No matter, are you ready to battle?"
+                            
+                            m "I've been waiting since you were a child for this day!"
+                            
+                            m "You're finally going to take over the family gym!"
+                            
+                            m "Hurray let's go outside!"
+                            
+                            a "Wait Mom I need time to think."
+                            
+                            a "I'll be in my room."
+                            
+                            hide home
+                            
+                            hide mom
+                            
+                            show room
+                            
+                            "I need some serious advice."
+                            
+                            "I really don't know if I have what it takes it beat mom."
+                            
+                            "Maybe I should look to someone for advice."
+                            
+                            menu:
+                                
+                                "Our Rival":
+                                    
+                                    jump choicer
+                                    
+                                "Devin the Bug Gym Leader":
+                                    
+                                    jump choiced
+                                    
+                                "Electra the Electric Gym Leader":
+                                    
+                                    jump choicee
+                                    
+                                "Takeo the Fighting Gym Leader":
+                                    
+                                    jump choicet
+                                    
+                      #finish choice11 solo route to takeomi island, beat rival after samurai battle.
+                      
+                      #finish end of mom gym route, get advice from any one of the mentors and beat mom. then establish love based on route.
+                                
+                                
+                                    
+                                
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        
+                            
+                            
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                           
+                        
+                
+                
+                   
+                   
+                
+                
+                
+                
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
                         
 
