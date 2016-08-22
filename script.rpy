@@ -1,11 +1,13 @@
 ﻿# You can place the script of your game in this file.
 
-# Declare images below this line, using the image statement.
+# Declare images below this line, using the image statement.    
+
+
 init:
     image lovein normal = "lovein.png"
     image prof normal = "prof2.png"
     image road="road.jpg"
-    image city="city.png"
+    image city="city.jpg"
     image back="back.png"
     image gym="gym.jpg"
     image forest="forest.png"
@@ -16,11 +18,14 @@ init:
     image karate ="fighter2.png"
     image spork smile ="sporksmilesmirk.png"
     image spork angry ="spork.png"
-    image samurai ="samurai.png"
+    image samurai ="sam.png"
     image mom ="mom.png"
     image home = "home.jpg"
     image room ="room.jpg"
     image battle ="mommy.png"
+    image temple ="temple.jpg"
+    image peak ="peak.jpg"
+
 # Declare characters used by this game.
 define player_name = Character("#C9C9C9")
 define a= Character(color = "#C9C9C9")
@@ -43,8 +48,11 @@ label splashscreen:
 
 label start:
 
+    play sound ("bensound-straight.mp3")
     
     show back
+    
+
     
     "You walk through Pritempts Plains minding your own business, when a large foot knocks you over."
     
@@ -76,7 +84,7 @@ label start:
     
         "The raichu became confused." 
     
-        jump choice1_fail
+        jump choice1_done
     
     label choice1_C:
         
@@ -422,12 +430,16 @@ label start:
         label choice7:
 
             a "On to the gym!"
-
+            
+            hide city
+            
             hide road
-
-           
+            
+            hide lovein normal
 
             show town
+            
+            show lovein normal
 
             
 
@@ -488,176 +500,9 @@ label start:
                     
                     hide lovein normal
                     
-                    jump choice9 
-
-            label choice8:
-                
-                show forest 
-                
-                "On my way to Olempec Town, I ran into whats-their-face."
-                
-                show lovein normal
-                
-                e "Ready for another battle?"
-                
-                a "Ready to leave me alone?"
-                
-                e "Now let {i}me{/i} think about it"
-                
-                e "..........."
-                
-                e "Nah, I love it when you get ticked off."
-                
-                a "Alright alright let's go!"
-                
-                menu:
-                    
-                    "Use your starter!":
-                        
-                        e "I've gotten used to your pokemon's tricks!"
-                        
-                        e "Try harder next time, and cry harder while your at it!"
-                        
-                        a "I'm so tired of this...."
-                        
-                        e "I could give you some tips on winning if you want?"
-                        
-                        "I'm out of here"
-                        
-                        hide lovein normal
-                        
-                        hide forest
-                        
-                        jump choice10
-                        
-                
-                    
-                    
-                    "Use Raichu":
-                        
-                        e "That was insane!" 
-                        
-                        e "I'll report you to the Pokemon League for cheating"
-                        
-                        e "You give your pokemon steriods or something?"
-                        
-                        a "You really only have to be the bare mininum to beat you."
-                        
-                        e "Very funny"
-                        
-                        e "Do you think you could teach me how to battle sometime?"
-                        
-                        a "Maybe later if I have time!"
-                        
-                        hide lovein normal
-                        
-                        hide forest 
-                        
-                        jump choice10
-                        
-            
-            label choice10
-            
-            show mountain
-            
-            a "Let's see... which way do I have to go?"
-            
-            a "I think I have to climb that mountain over there."
-            
-            a "This is gonna be abuse on my legs."
-            
-            "Better get started right now!"
-            
-            show mtown
-            
-            a "That took way too long to get here."
-            
-            a "What is this, some kind of bathhouse town?"
-            
-            show lovein normal
-            
-            e "You know it's really weird when you talk to yourself."
-            
-            e "It almost makes it seem like you have friends!"
-            
-            a "{i}Hah! That was so funny!{/i}"
-            
-            "How did I know they were following me.."
-            
-            e "Think that there is a volcano or somthing underneath the mountain, that's why there are so many bath houses."
-               
-            a "I guess that makes sense.."
-            
-            e "You heading to the gym?"
-            
-            a "Did you think I climbed the mountain to take a bath?"
-            
-            e "Well no.... dang you're so hard to talk to! See you later."
-            
-            hide lovein normal
-            
-            a "........ That was weird."
-            
-            hide mtown
-            
-            show peak
-            
-            a "Okay I'm going to take this gym down!"
-            
-            show spork smile 
-            
-            s "Are you really now?"
-            
-            "Oh dang this lady heard."
-            
-            s "Well you're in for a {i}shock kid{/i}, cause I don't lose easily"
-            
-            s "You ready, let's fight RIGHT NOW!"
-            
-            a "Wait real quick before we start, why are we fighting so high above the ground?"
-            
-            s "Less talking more fighting!"
-            
-            hide spork smile
-            
-            show spork angry
-            
-            d "Gym Leader Electra sent out Raichu, Electabuzz and Emolga."
-            
-                menu:
-                    
-                    "Send out ya starter pokemon":
-                        
-                        "Awww yeah! That was way to easy!"
-                        
-                        jump choice0
-                        
-                    "Send out Raichu":
-                        
-                        "That was really tough since she had a Raichu too."
-                        
-                        jump choice0
-                        
-            label choice0:
-            
-                        hide spork angry
-                        
-                        show spork smile
-                        
-                        s "You really know your stuff kid. You put up alot of {i}resistance{/i}!"
-                        
-                        a "Thank you for taking the time to fight me!"
-                        
-                        s "Stay safe!"
-                        
-                        hide spork smile
-                        
-                        hide peak
-                        
-                        jump choice11
-                    
-                    
-            label choice9:
+                    jump choiceplzwork 
+        
+        label choiceplzwork:
                 
                 show mountain
                 
@@ -707,13 +552,17 @@ label start:
                 
                 a "You afraid of heights or something?"
                 
-                e "As a matter of fact I am! And I'm proud!"
+                e "As a matter of fact, I am! And I'm proud!"
                 
                 e "I think the pokegods never wanted us to be this close to the sky!"
                 
                 b "I'm es-static that you've climbed this high to come see me."
                 
                 b "Ohm...I'm over here kids."
+                
+                hide lovein normal
+                
+                show spork smile
                 
                 "We turned around to see a fashionable lady stading behind us."
                 
@@ -723,11 +572,17 @@ label start:
                 
                 s "Watt are you waiting for? {i} Let's Go!{/i}"
                 
+                hide spork smile
+                
+                show lovein normal
+                
                 e "Wait before you guys start fighting I have a quick question."
                 
-                e "Did you decide to build this gym at the top of a mountain? Maybe that's why you never get any younger visitors!"
+                e " Why did you decide to build this gym at the top of a mountain? Maybe that's why you never get any younger visitors!"
                 
                 e "And you seemed like such a {i} grounded {/i} person."
+                
+                hide lovein normal
                 
                 show spork angry 
                 
@@ -740,6 +595,10 @@ label start:
                     "Send out your starter!":
                         
                         a "Of course I won!"
+                        
+                        hide spork angry
+                        
+                        show spork smile
                         
                         jump choice01
                         
@@ -763,6 +622,9 @@ label start:
                         
                         s "I feel bad for you."
                         
+                        
+                        
+        label choice01:
                         s "Take care kids!"
                     
                         s "It would really {i} hertz{i} my feelings if you didn't come back to visit!"
@@ -789,13 +651,13 @@ label start:
                         
                         e "Well culturally that is."
                         
-                        a "I'm definelty getting a very different vibe as we come up to the drawbridge."
+                        a "I'm definitely getting a very different vibe as we come up to the drawbridge."
                         
                         e "I heard their gym leader is a samurai or something!"
                         
                         a "Okay now I'm really excited!"
                         
-                        e "Don't get to excited, you still have to beat them."
+                        e "Don't get too excited, you still have to beat them."
                         
                         a "Chill {i}mom{/i}, I can handle this!"
                         
@@ -811,7 +673,11 @@ label start:
                         
                         e "Too much red, it's hurting my eyes!"
                         
-                        a "How do you do your hair in the morning then?"
+                        a "How do you look at yourself in the mirror then?"
+                        
+                        a "Like, your hair."
+                        
+                        a "You feel me?"
                         
                         e "..............."
                         
@@ -845,9 +711,13 @@ label start:
                         
                         hide lovein normal
                         
+                        hide shrine
+                        
                         show intemple
                         
                         "It's so cool."
+                        
+                        show lovein normal
                         
                         e "This place looks decent."
                         
@@ -859,6 +729,7 @@ label start:
                         
                         b "Ahh young love."
                         
+        
                         e "First of all, I'm not in love, second of all who said that?"
                         
                         a "I am in sound agreement with you on this one!"
@@ -871,29 +742,29 @@ label start:
                         
                         show samurai
                         
-                        o "That's great!, I'm Takeo, and I specialize in fighting pokemon!"
+                        t "That's great!, I'm Takeo, and I specialize in fighting pokemon!"
                         
                         a "You're really a samurai!"
                         
-                        o "You thought this place was just a tourist attraction huh?"
+                        t "You thought this place was just a tourist attraction huh?"
                         
                         a "No but a samurai, who do you fight in this day and age?"
                         
-                        o ".........."
+                        t ".........."
                         
-                        o "My inner demons ¯\_(ツ)_/¯ ."
+                        t "My inner demons :^) ."
                         
-                        o "Alright LET'S GO!"
+                        t "Alright LET'S GO!"
                         
                         d "Gym Leader Takeo sent out Hariyama, Machamp and Hitmontop."
                         
-                           menu:
+                        menu:
                             
                             "Send out your starter.":
                                 
                                 "This battle was really hard for some reason!"
                                 
-                                o "I always go down kicking and scratching, or should I say kicking and {i}punching{/i}?"
+                                t "I always go down kicking and scratching, or should I say kicking and {i}punching{/i}?"
                                 
                                 "Cue laugh track"
                                 
@@ -905,24 +776,24 @@ label start:
                                 
                                 a "Or should I say taking steriods from a weight lifter."
                                 
-                                o "Hey!, You know I would never take any performance enhancing substanc-"
+                                t "Hey!, You know I would never take any performance enhancing substanc-"
                                 
                                 "Cue laugh track"
                                 
                                 jump choice13
                                 
-                        label choice13:
+        label choice13:
                             
                             
-                            o "Come visit me if you ever need any help kids!"
+                            t "Come visit me if you ever need any help kids!"
                             
-                            o "It gets pretty lonely living out here in a temple."
+                            t "It gets pretty lonely living out here in a temple."
                             
                             hide samurai
                             
                             show lovein normal
                             
-                            e "I fully believe the protein shakes are getting to that guy's head."
+                            e "I fully believe that the protein shakes are getting to that guy's head."
                             
                             a "Don't mske fun of him, he could hunt you down one day!"
                             
@@ -1019,6 +890,185 @@ label start:
                       #finish end of mom gym route, get advice from any one of the mentors and beat mom. then establish love based on route.
                                 
                                 
+        
+        
+        
+        label choice8:
+                
+                show forest 
+                
+                "On my way to Olempec Town, I ran into whats-their-face."
+                
+                show lovein normal
+                
+                e "Ready for another battle?"
+                
+                a "Ready to leave me alone?"
+                
+                e "Now let {i}me{/i} think about it"
+                
+                e "..........."
+                
+                e "Nah, I love it when you get ticked off."
+                
+                a "Alright alright let's go!"
+                
+                menu:
+                    
+                    "Use your starter!":
+                        
+                        e "I've gotten used to your pokemon's tricks!"
+                        
+                        e "Try harder next time, and cry harder while your at it!"
+                        
+                        a "I'm so tired of this...."
+                        
+                        e "I could give you some tips on winning if you want?"
+                        
+                        "I'm out of here"
+                        
+                        hide lovein normal
+                        
+                        hide forest
+                        
+                        jump choice10
+                        
+                
+                    
+                    
+                    "Use Raichu":
+                        
+                        e "That was insane!" 
+                        
+                        e "I'll report you to the Pokemon League for cheating"
+                        
+                        e "You give your pokemon steriods or something?"
+                        
+                        a "You really only have to be the bare mininum to beat you."
+                        
+                        e "Very funny"
+                        
+                        e "Do you think you could teach me how to battle sometime?"
+                        
+                        a "Maybe later if I have time!"
+                        
+                        hide lovein normal
+                        
+                        hide forest 
+                        
+                        jump choice10
+                        
+            
+        label choice10:
+            
+                show mountain
+            
+                a "Let's see... which way do I have to go?"
+            
+                a "I think I have to climb that mountain over there."
+            
+                a "This is gonna be abuse on my legs."
+            
+                "Better get started right now!"
+                
+                hide devin normal
+                
+                hide gym
+                
+                hide mountain
+                
+                show mtown
+                
+                a "That took way too long to get here."
+                
+                a "What is this, some kind of bathhouse town?"
+                
+                show lovein normal
+                
+                e "You know it's really weird when you talk to yourself."
+                
+                e "It almost makes it seem like you have friends!"
+                
+                a "{i}Hah! That was so funny!{/i}"
+                
+                "How did I know they were following me.."
+                
+                e "Think that there is a volcano or somthing underneath the mountain, that's why there are so many bath houses."
+                   
+                a "I guess that makes sense.."
+                
+                e "You heading to the gym?"
+                
+                a "Did you think I climbed the mountain to take a bath?"
+                
+                e "Well no.... dang you're so hard to talk to! See you later."
+                
+                hide lovein normal
+                
+                a "........ That was weird."
+                
+                hide city
+                
+                hide mtown
+                
+                show peak
+                
+                a "Okay I'm going to take this gym down!"
+                
+                show spork smile 
+                
+                s "Are you really now?"
+                
+                "Oh dang this lady heard."
+                
+                s "Well you're in for a {i}shock kid{/i}, cause I don't lose easily"
+                
+                s "You ready, let's fight RIGHT NOW!"
+                
+                a "Wait real quick before we start, why are we fighting so high above the ground?"
+                
+                s "Less talking more fighting!"
+                
+                hide spork smile
+                
+                show spork angry
+                
+                d "Gym Leader Electra sent out Raichu, Electabuzz and Emolga."
+                
+                menu:
+                    
+                    "Send out ya starter pokemon":
+                        
+                        "Awww yeah! That was way to easy!"
+                        
+                        jump choice0
+                        
+                    "Send out Raichu":
+                        
+                        "That was really tough since she had a Raichu too."
+                        
+                        jump choice0
+                        
+        label choice0:
+            
+                        hide spork angry
+                        
+                        show spork smile
+                        
+                        s "You really know your stuff kid. You put up alot of {i}resistance{/i}!"
+                        
+                        a "Thank you for taking the time to fight me!"
+                        
+                        s "Stay safe!"
+                        
+                        hide spork smile
+                        
+                        hide peak
+                        
+                        jump choice11
+                    
+                    
+        
                                     
                                 
                             
