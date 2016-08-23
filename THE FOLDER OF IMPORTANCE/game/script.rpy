@@ -420,6 +420,8 @@ label start:
                     
         label choice5fail:
                 
+                "Their Dragonite uses Dragon Claw. Your Raichu passes out."
+                
                 e "I knew you could never beat me!"
                 
                 a "Ugh, shut it! Since we were little you've always been a sore winner!"
@@ -432,6 +434,7 @@ label start:
                 
                 "Your Pokemon black out."
                 
+                hide raichu
                 
                 hide lovein normal
                 
@@ -455,6 +458,8 @@ label start:
                 
         label choice5:
             
+            "Your starter destroys the Dragonite! The Dragonite roars in pain and faints."
+            
             e "Dang, how'd you get so good?"
             
             a "I had a little practice."
@@ -463,7 +468,7 @@ label start:
             
             a "{i}Yeah, yeah, keep talking. You're such a sore loser.{/i}"
             
-            e "I don't have time to hang around with softies,{i}bye{/i}!"
+            e "I don't have time to hang around with softies, {i}bye{/i}!"
             
             hide lovein normal
             
@@ -531,7 +536,7 @@ label start:
             
             play sound ("bensound-epic.mp3")
             
-            jump choice99
+            label choice99
             
             d "Gym Leader Devin has just sent out Butterfree. Oooh, fierce!"
             
