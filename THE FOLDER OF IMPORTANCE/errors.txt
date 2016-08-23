@@ -1,0 +1,37 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script2.rpy", line 559: expected ':' not found.
+    label choice10
+                  ^
+
+File "game/script2.rpy", line 627: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    menu:
+    ^
+
+File "game/script2.rpy", line 890: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    menu:
+    ^
+
+File "game/script2.rpy", line 1059: end of line expected.
+    jump choice 14
+                ^
+
+File "game/script2.rpy", line 1075: end of line expected.
+    jump choice 14
+                ^
+
+File "game/script2.rpy", line 1079: expected ':' not found.
+    label choice 14:    
+                 ^
+
+File "game/script2.rpy", line 1131: expected ':' not found.
+    label choice 15:
+                 ^
+
+File "game/script2.rpy", line 1238: expected ':' not found.
+    label choice 16:
+                 ^
+
+Ren'Py Version: Ren'Py 6.99.10.1227

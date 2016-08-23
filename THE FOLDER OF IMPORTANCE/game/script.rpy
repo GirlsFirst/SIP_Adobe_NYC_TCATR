@@ -1,4 +1,4 @@
-A# You can place the script of your game in this file.
+﻿# You can place the script of your game in this file.
 
 # Declare images below this line, using the image statement.    
 

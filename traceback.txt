@@ -1,0 +1,17 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+Before loading the script.
+WindowsError: [Error 267] The directory name is invalid: u'C:\\Users\\gwcp\\Desktop\\SIP_Adobe_NYC_TCATR\\script.rpy\\*.*'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\gwcp\Desktop\renpy-6.99.10-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "C:\Users\gwcp\Desktop\renpy-6.99.10-sdk\renpy\main.py", line 278, in main
+    for fn in os.listdir(dir):
+WindowsError: [Error 267] The directory name is invalid: u'C:\\Users\\gwcp\\Desktop\\SIP_Adobe_NYC_TCATR\\script.rpy\\*.*'
+
+Windows-8-6.2.9200
+Ren'Py 6.99.10.1227
+ 
