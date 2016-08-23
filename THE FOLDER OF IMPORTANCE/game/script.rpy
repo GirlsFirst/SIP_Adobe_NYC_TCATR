@@ -506,7 +506,7 @@ label start:
                     
                     show raichu
                     
-                    "Raichu used Discharge!
+                    "Raichu used Discharge!"
                     
                     
                     a "Nice job, Raichu! We won that by a mile!"
