@@ -267,7 +267,7 @@ label start:
                 
                 jump choice4_1
                 
-            "I want to battle my pokemon.":
+            "I want to battle with my pokemon.":
                 
                 jump choice3_2
                 
@@ -352,7 +352,7 @@ label start:
                 
                 show lovein normal
                 
-                a "Hey! You just got here huh?"
+                a "Hey! You finally got a pokemon? Jeez, I've been waiting for this!"
                 
                 $ rival_name = renpy.input("What is your rival's name?")
                 
