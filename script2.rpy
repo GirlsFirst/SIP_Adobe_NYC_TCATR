@@ -911,7 +911,7 @@ label start:
                                 
                                 jump choice13
                                 
-                        label choice13:
+        label choice13:
                             
                             
                             o "Come visit me if you ever need any help kids!"
@@ -1018,17 +1018,17 @@ label start:
                       
                       #finish end of mom gym route, get advice from any one of the mentors and beat mom. then establish love based on route.
               
-                label choice11:
+        label choice11:
                 
                     show templeroad
                     
-                    a "Ugh Man! I'm exhausted how am I ever going to reserve energy for Takeo Batlle?"
+                    a "Ugh Man! I'm so exhausted! How am I gonna have energy for the gym battle?"
                     
-                    "*WORRIES*"
+                    "{i}WORRIES{/i}"
                     
                     a "What if I've come this far just to fail!"
                     
-                    "I Will NOT! mother, I'm going to do this for us"
+                    "I will not! mother, I'm going to do this for us!"
                     
                     hide templeroad
                     
@@ -1038,13 +1038,13 @@ label start:
                     
                     e "Well, Well, Well If it isn't you?"
                     
-                    "Looks of intrigue"
+                    "Look of curiosty"
                     
-                    e "Where ya headed, I know your on your way to a battle why not refreshen your skills before you take an L?"
+                    e "Where ya headed, I know your on your way to a battle, why not refresh your skills before you take an L?"
                     
                     a "Okay sure, Mr.I THINK I Know It All"
                     
-                    "Love Interest sends Dragonite "
+                    "Love Interest sends out Dragonite "
                     
                     menu:
                     
@@ -1054,7 +1054,7 @@ label start:
                             
                             a "I don't need it!"
                             
-                            "Now how was that for your smack talking, now get out my way i have a battle to win"
+                            "Now how was that for your smack talking, now get out of my way I have a battle to win"
                             
                             jump choice 14
                         
@@ -1066,29 +1066,29 @@ label start:
                                 
                             a "Woop woop, I'm determined my training needs to pay off eventually."
                             
-                            "you say mockingly"
+                            "You say mockingly"
                             
-                            e "hope your ready for that Samuri!"
+                            e "Hope your ready for that Samurai!"
                             
-                            a "yea, yea see you later hater"
+                            a "Yea, yea see you later hater."
                             
                             jump choice 14
                 
                 
                 
-                label choice 14:    
+        label choice 14:    
                     
                     hide lovein normal
                     
                     hide shrine
                     
-                    show temple normal
+                    show temple 
                     
-                    a"OMG! this is it, no turning back"
+                    a "OMG! This is it, no turning back"
                     
                     "THIS IS FOR YOU MOM!"
                     
-                    "continues onward to the temple"
+                    "Continues onward to the temple."
                     
                     hide temple    
                
@@ -1096,53 +1096,54 @@ label start:
                     
                     "ENTERS Temple"
                     
-                    t"WHO goes there?"
+                    t "Who goes there?"
                     
-                    "I look around, but I dont see anyone"
+                    "I look around, but I don't see anyone."
                                 
                     "FLOP!"                    
                     
-                    "A Man with a sword, and dressed like a Samuri appears to have fallen neck first in front of me"
+                    "A man with a sword, and dressed like a Samurai appears to have fallen neck first in front of me"
                     
-                    show sam
+                    show samurai
                     
-                    t"I'm sorry about that rusty entrance but Hi I'm The Temple Gym Leader, I was told to expect you from a special someone"
+                    t "I'm sorry about that rusty entrance but hi I'm The Takeomi Gym Leader. I was told to expect you from a special someone"
                     
-                    a" Hi My name is player_name , I'm here to earn my experience I would like to Battle you Master Takeo "
+                    a "Hello, I'm here to earn my experience I would like to Battle you Master Takeo "
                     
                     t"That's what I'm here for laddy , step in my arena, get ready to begin in 10 minutes"
                     
-                    "Takeo sends out hariyama"
+                    "Takeo sends out Hariyama"
                     
                     menu:
                         "Use your starter!":
                         
-                            t "OH MY!, I didn't expect that powerful pokemon , CRAP ! how do i let a twerp beat me, now BEAT IT!"
+                            t "OH MY!, I didn't expect that powerful pokemon, how did I let a twerp beat me, now BEAT IT!"
                         
                             jump choice 15
                             
                             
                         "{i}Raichu{i}":
                         
-                            t "OH MY!, I didn't expect that powerful pokemon , CRAP ! how do i let a twerp beat me, now BEAT IT!"
+                            t "OH MY!, I didn't expect that powerful pokemon, how do I let a twerp beat me, now BEAT IT!"
                             
                             jump choice 15
                         
-                label choice 15:
+        label choice 15:
                 
                     hide intemple 
                     
-                    hide sam normal
+                    hide samurai
                     
                     show city
                     
-                    "I want to hurry , how can i make it to home fast enough?"
+                    "I want to hurry, how can I make it to home fast enough?"
                     
-                    label choice001_for:
+        label choice001_for:
                     
                     "What do I use?"
                     
                     menu:
+                        
                         "Passerby's Car-ride":
                                                 jump choice001_loop
                         
@@ -1150,13 +1151,13 @@ label start:
                         "Bike":
                                 jump choice001_done
 
-                    label choice001_loop:
+        label choice001_loop:
                     
                         "I don't trust strangers"
                         
                         jump choice001_for
                         
-                    label choice001_done:
+        label choice001_done:
                     
                     hide city
                     
@@ -1164,15 +1165,15 @@ label start:
                     
                     show prof normal
                     
-                    c "So you've made it back in  one piece, how's Raichu and your starter holding up?"
+                    c "So you've made it back in one piece, how's Raichu and your starter holding up?"
                                 
-                    a "pretty excited and healthy ma'am were on our way to our last gym battle any advice or LUCK your able to give?"
+                    a "Pretty healthy ma'am. We're on our way to our last gym battle any advice or LUCK your able to give?"
                     
-                    c "Yes, I sure do, dont let those lost battles effect your outcome on your final , Clear eyes full hearts Can't lose!!"
+                    c "Yes, I sure do, don't let those nerves effect your outcome on your next battle. Clear eyes full hearts Can't lose!!"
                     
-                    a"Thank you so much helping me out in the beginning , I have to go visit my Mom I'll 'catch' you later"
+                    a "Thank you so much helping me out in the beginning. I have to go visit my Mom. I'll {i}catch{/i} you later."
                     
-                    "HAHA! , pokemon pun"
+                    "HAHA!, pokemon pun"
                     
                     hide road 
                     
@@ -1208,27 +1209,28 @@ label start:
                     
                     m "You see, that person right there!"
                     
-                    hide mom normal
+                    hide mom 
                     
                     show lovein normal
                     
-                    e "Hello darling nice to see she follows directions, What does your last battle and this Gym mean to you and your precious mommy HAHA "
+                    e "Hello darling, nice to see she follows directions. What does this battle and this Gym mean to you and your precious mommy {i}HAHA{/i} "
                     
                     a "Honestly don't care, you've crossed the line here!"
                     
-                    "!FINAL BATTLE FOR COLOSSEUM GYM!"
+                    "FINAL BATTLE FOR COLOSSEUM GYM!"
                     
                     "Love Interest sends out Dragonite"
+                        
                         menu:
                     
                             "Use your starter!":
                                 
-                                e "Fair fighting huh? that's a tough one you've trained, Keep at the Colosseum Gym"
+                                e "Fair fighting huh? You've trained, keep at the Colosseum Gym"
                             
                                 jump choice 16
                                 
                             "{i}Raichu{i}":
-                                e "Fair fighting huh? that's a tough one you've trained, Keep at the Colosseum Gym"
+                                e "Fair fighting huh? You've trained, keep at the Colosseum Gym"
                                 
                                 jump choice 16
                                 
@@ -1236,28 +1238,29 @@ label start:
                                 
                                 
                 label choice 16:
-                
+                    
+
                     hide lovein normal
                     
-                    show mom normal
+                    show mom 
                     
                     m "Thank you so much sweety, words can't describe how much I love you and appreciate your training skills, I want you to use those skills you learned and Take The Colosseum Gym in your hands"
                     
-                    m" Don't let ANYONE come in between you and your journey becoming the BEST Gym Leader"
+                    m " Don't let ANYONE come in between you and your journey. You can become the BEST Gym Leader"
                     
                     "OBTAINED THE COLOSSEUM GYM KEY"
                     
-                    m "Now I'm going home , how about you go check out your new Gym"
+                    m "Now I'm going home. How about you go check out your new Gym"
                     
-                    a "Okay! , Thank you Mom I love you so much See you later !"
+                    a "Okay, thank you Mom. I love you so much. See you later!"
                     
-                    "you run off excitingly"
+                    "You run off excitedly."
                     
                     hide mom normal
                     
                     show colosseum
                     
-                    "THIS is mines?, THIS is what I've spent my journey to accquire?, Did I achieve my goal?"
+                    "THIS is mine? THIS is what I've spent my journey to accquire?, Did I achieve my goal?"
                     
                         
                     
