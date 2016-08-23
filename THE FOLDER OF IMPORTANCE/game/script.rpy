@@ -998,7 +998,7 @@ label start:
                         
                         e "I literally just looked at the billboard that said, 'town map.'"
                         
-                        a "Okay then you lead the way!"
+                        a "Okay then, you lead the way!"
                         
                         hide shrine
                         
@@ -1016,8 +1016,14 @@ label start:
                         
                         e "Quit your {i}gasping{/i} and {i}gawking{/i} and let's go already."
                         
-                        a "I'm taking note to come here by myself next time."
+                        a "I'm taking note to come here by myself next time. Not with some random stranger that I obviously hadn't known my entire life."
                         
+                        e "Hey! I was so nice to you when you were little! Especially when your mom left to defend her gym."
+                        
+                        e "...I was always there for you."
+                        
+                        a "Yeah... I know. Sorry. You should learn to deal with me if we're gonna be travelling together, though."
+                
                         hide temple
                         
                         hide lovein normal
@@ -1026,24 +1032,25 @@ label start:
                         
                         show intemple
                         
-                        "It's so cool."
+                        "{i}It's so cool.{/i}"
                         
                         show lovein normal
                         
-                        e "This place looks decent."
+                        e "This place looks decent, I guess."
                         
                         e "Could use a little bit of interior design."
                         
-                        a "Okay if this place looks decent, what does your room look like, the Taj Mahal?"
+                        a "Okay... Tf this place looks decent, what does your room look like? The Taj Mahal?!"
                         
                         e "Chill, I was just giving my constructive criticism."
                         
-                        b "Ahh young love."
+                        b "Ahh, young love."
                         
-        
-                        e "First of all, I'm not in love, second of all who said that?"
+                        e "First of all, I'm not in love. Second of all, who said that?"
                         
                         a "I am in sound agreement with you on this one!"
+                        
+                        a "For once."
                         
                         hide lovein normal
                         
@@ -1053,21 +1060,25 @@ label start:
                         
                         show samurai
                         
-                        t "That's great!, I'm Takeo, and I specialize in fighting pokemon!"
                         
-                        a "You're really a samurai!"
                         
-                        t "You thought this place was just a tourist attraction huh?"
+                        t "That's great. I'm Takeo, and I specialize in fighting Pokemon. I haven't had challengers in months."
                         
-                        a "No but a samurai, who do you fight in this day and age?"
+                        a "Argh! Get out of my face!
+                        
+                        a "...Wow! You're really a samurai!"
+                        
+                        t "You thought this place was just a tourist attraction, huh?"
+                        
+                        a "No, but a samurai.... Who do you fight in this day and age?"
                         
                         t ".........."
                         
                         t "My inner demons :^) ."
                         
-                        t "Alright LET'S GO!"
+                        t "Alright, quit beating around the bush, LET'S GO!"
+                                                                            
         label choice45:
-            
             
                         stop sound
                         
@@ -1087,29 +1098,39 @@ label start:
                                 
                                 show samurai
                                 
-                                "I seriously lost to this guy?!"
+                                "Ouch! I seriously lost to this guy?!"
                                 
                                 t "I always go down kicking and scratching, or should I say kicking and {i}punching{/i}?"
                                 
                                 "Cue laugh track"
                                 
-                                "You black out."
+                                "Your Pokemon black out."
                                 
-                                "Restart?"
+                                a "I'll be back in a jiffy!"
+                                     
+                                "..."
                                 
                                 stop sound
                                 
                                 jump choice45
                                 
-                            "Who's that pokemon? It's {i}Raichu{/i}." :
+                            "Who's that pokemon? It's {i}Raichu{/i}!" :
                                 
                                 hide hari
+                                
+                                show raichu
+                                                    
+                                a "Let's go Raichu! You're the best!"
+                                                        
+                                "Raichu beats up Takeo's Hariyama."
+                                                                   
+                                hide raichu
                                 
                                 show samurai
                                 
                                 a "That was like taking candy from a baby."
                                 
-                                a "Or should I say taking steriods from a weight lifter."
+                                a "Or should I say, taking steroids from a weight lifter."
                                 
                                 t "Hey!, You know I would never take any performance enhancing substanc-"
                                 
@@ -1122,14 +1143,24 @@ label start:
                             
                             play sound ("bensound-buddy.mp3")
                             
-                            t "Come visit me if you ever need any help kids!"
+                            t "Come visit me if you ever need any help, kids!"
+                                                                              
+                            t "It gets pretty lonely living out here in a temple."                                                  
                             
-                            t "It gets pretty lonely living out here in a temple."
+                            t "Good luck on your journey. May the love gods be in your favor!"
+                                                                                              
+                            "Takeo looks into the distance wistfully."
+                                                                              
+                            a "{i}What's up with this dude...{/i}
                             
                             hide samurai
                             
                             show lovein normal
                             
+                            e "Jeez, what the heck!"
+                                       
+                            "You turn to look at your rival. They're blushing. You stifle a laugh."           
+                                       
                             e "I fully believe that the protein shakes are getting to that guy's head."
                             
                             a "Don't make fun of him, he could hunt you down one day!"
