@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 509: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-                        "Raichu used Discharge!
+File "game/script.rpy", line 539: expected ':' not found.
+    label choice99
+                  ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227

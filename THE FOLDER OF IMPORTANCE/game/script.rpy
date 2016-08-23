@@ -536,7 +536,7 @@ label start:
             
             play sound ("bensound-epic.mp3")
             
-            label choice99
+            label choice99:
             
             d "Gym Leader Devin has just sent out Butterfree. Oooh, fierce!"
             
