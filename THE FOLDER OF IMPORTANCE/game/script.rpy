@@ -35,6 +35,7 @@ init:
     image colo ="colosseum.png"
     image kang="kang.png"
     image butter="butterfree.png"
+    image raichu="raichu.png"
     
 # Declare characters used by this game.
 define player_name = Character("#C9C9C9")
