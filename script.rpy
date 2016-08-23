@@ -1,4 +1,4 @@
-A# You can place the script of your game in this file.
+﻿# You can place the script of your game in this file.
 
 # Declare images below this line, using the image statement.    
 
@@ -73,13 +73,13 @@ label start:
     
     "Raising your head you see a Raichu running off into the distance."
                       
-    b "Think Fast"
+    b "Heads up! Think Fast!"
 
     "Three Pokeballs fall to your feet."
      
     b "Make sure that Raichu doesn't get away!"
     
-    z "You want to me choose one huh?"
+    z "Am I supposed to choose a Pokeball?"
     
     label choicejk:
             
@@ -152,7 +152,7 @@ label start:
         
         show turt
         
-        z "Turtwig use absorb!.....wait how do I know all this?"
+        z "Turtwig used absorb!.....Wait, how do I know all this?"
     
         "The raichu became confused." 
         
@@ -164,7 +164,7 @@ label start:
         
         show chim
         
-        z "Chimchar use ember!.....wait how do I know all this?"
+        z "Chimchar use ember!.....Wait, how do I know all this?"
         
         "The raichu got inflicted with a burn and turned its tail down in surrender." 
         
@@ -176,7 +176,7 @@ label start:
         
         show pip
         
-        z "Piplup use Bubble!....wait how do I know all this?"
+        z "Piplup use Bubble!....Wait, how do I know all this?"
         
         "It was a critical hit! The raichu fainted."
         
@@ -190,15 +190,15 @@ label start:
         
         z " Alright, I'll give it a shot!"
         
-        "...."
+        "....1"
         
-        "...."
+        "....2"
         
-        "...."
+        "....3"
         
         "{i}click{/i}"
         
-        b "That was awesome kid!"
+        b "That was awesome, kid!"
         
         
         jump choice2_name
@@ -218,6 +218,8 @@ label start:
         stop sound 
         
         play sound ("bensound-funkyelement.mp3")
+        
+        c "I'm Professor Maple. I know everything about Pokemon and their behavior."
         
         c "Say, what's your name kiddo?"
         
@@ -249,7 +251,7 @@ label start:
     
     label choice2_done:
         
-        c "Take good care of them! Their your new best friend!"
+        c "Take good care of them! They're your new best friend!"
         
         a "I can't wait to tell my mom." 
         
@@ -267,7 +269,7 @@ label start:
                 
                 jump choice4_1
                 
-            "I want to battle my pokemon.":
+            "I want to battle with my pokemon.":
                 
                 jump choice3_2
                 
@@ -352,7 +354,7 @@ label start:
                 
                 show lovein normal
                 
-                a "Hey! You just got here huh?"
+                a "Well, well. Guess who's here. I haven't seen them since... This morning."
                 
                 $ rival_name = renpy.input("What is your rival's name?")
                 
@@ -360,9 +362,9 @@ label start:
                 
                 $ e = rival_name
                 
-                e " Yeah I did......hold up. Is that a pokeball I see? You finally got one too. I've been itching to battle you this whole time."
+                e "Hey. You finally got a pokemon? Wow! Took you long enough. Jeez, I've been waiting for this! I've been itching to battle you this whole time."
                 
-                e "{i}LET'S GO{/i}"
+                e "{i}LET'S GO!{/i}"
                
                 
         label choice23:
