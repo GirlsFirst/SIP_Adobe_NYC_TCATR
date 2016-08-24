@@ -757,7 +757,7 @@ label start:
 
             e "Don't take what I say the wrong way...."
                    
-            "You glance your rival out of the corner of your eye. They're looking the other way, hands in pockets."
+            "You glance at your rival out of the corner of your eye. They're looking the other way, hands in pockets."
                                                                                                                    
             a "Hmm..."
             
@@ -1152,7 +1152,7 @@ label start:
                         
                         show spork smile
                                            
-                        s "It would really {i} hertz{/i} my feelings if you didn't come back to visit!"                   
+                        s "It would really {i}hertz{/i} my feelings if you didn't come back to visit!"                   
                          
                         hide spork smile
                                                                                                       
@@ -1170,7 +1170,7 @@ label start:
                         
                         e "The last place we have to go to is Taketomi Island."
                         
-                        a "I've always wanted visit that place!"
+                        a "I've always wanted to visit that place!"
                         
                         e "That place is very ....Different."
                         
@@ -1311,7 +1311,7 @@ label start:
                            
                         "You sigh and force a smile."
                         
-                        a "Come on, let's talk. I'm not the type to get all mushy and sad for no reason."
+                        a "Come on, let's walk. I'm not the type to get all mushy and sad for no reason."
                         
                         stop sound
                         
@@ -1635,7 +1635,7 @@ label start:
                                  
                             a "Fine, fine."
                                  
-                            "Taken aback by their somewhat brutal and unexpected honestly, you can't help but blush."
+                            "Taken aback by their somewhat brutal and unexpected honesty, you can't help but blush."
                             
                             a "Uhm... You've been surprisingly nice recently. I guess. Uh..."
                                           
@@ -2291,7 +2291,7 @@ label start:
                     
                     "..."
                     
-                    "{i}HUFF...{/i}
+                    "{i}HUFF...{/i}"
                     
                     a "Ugh, man! I'm so exhausted!"
                                    
@@ -2323,7 +2323,7 @@ label start:
                                             
                     a "Where do you think? I just beat Electra and took a leisurely hike down the mountain."
                                             
-                    e "I know you're on your way to a battle. You think I'm an airhead or something?
+                    e "I know you're on your way to a battle. You think I'm an airhead or something?"
                     
                     a "{i}Wouldn't be surprised.{/i}"
                     
@@ -2333,7 +2333,7 @@ label start:
                     
                     e "...A loss, you dummy."
                     
-                    a "Okay sure, Mr.I THINK I Know It All"
+                    a "Okay sure, Mr.I THINK I Know It All!"
                     
                     e "Fine, let's fight since you came all this way to see me."
                     
@@ -2469,33 +2469,36 @@ label start:
                     
                     "A man with a sword suddenly appears in front of me!"
                     
+                    "He almost falls over!"
                     
+                    t "I'm sorry about that rusty entrance but hi,
+                       
+                    t "I'm The Takeo Gym Leader. I was told to expect you from a special someone..."
                     
-                    t "I'm sorry about that rusty entrance but hi I'm The Takeo Gym Leader. I was told to expect you from a special someone"
+                    a "Hello, I'm here to battle you, Master Takeo."
                     
-                    a "Hello, I'm here to earn my experience I would like to Battle you Master Takeo "
-                    
-                    t"That's what I'm here for laddy , step in my arena, get ready to begin in 10 minutes"
+                    t "That's what I'm here for lad, step in my arena, get ready to begin!"
     
         label choice76:
                     
                     play sound ("bensound-epic.mp3")
                     
-                    "Takeo sends out Hariyama"
+                    "Gym Leader Takeo sends out Hariyama!"
                     
                     hide samurai
                     
                     show hari
                     
-                    
                     menu:
                         "Use your starter!":
+                                           
+                            a "AHH!!!"
                         
-                            a "I LOST"
+                            a "I LOST!"
                             
                             "You black out."
                             
-                            "Restart?"
+                            "..."
                             
                             hide hari
                             
@@ -2506,7 +2509,9 @@ label start:
                             
                         "{i}Raichu{i}":
                         
-                            t "OH MY!, I didn't expect that powerful pokemon, how do I let a twerp beat me, now BEAT IT!"
+                            t "OH MY! I didn't expect that powerful pokemon.
+                                             
+                            t "How did I let a twerp beat me?! Scram! BEAT IT!"
                             
                             jump choice15
                         
@@ -2528,21 +2533,19 @@ label start:
                     menu:
                         
                         "Passerby's Car-ride":
-                                                jump choice001_loop
+                                             
+                        "Uhh... Mom told me not to trust strangers."
+                                             
+                        jump choice001_for
                         
                         
                         "Bike":
-                                jump choice001_done
+                        jump choice001_done
 
-        label choice001_loop:
-                    
-                        "I don't trust strangers"
-                        
-                        jump choice001_for
                         
         label choice001_done:
                     
-                    hide city
+                     hide city
                     
                     show road
                     
@@ -2550,15 +2553,19 @@ label start:
                     
                     play sound ("bensound-funkyelement.mp3")
                     
-                    c "So you've made it back in one piece, how's Raichu and your starter holding up?"
+                    c "So you've made it back in one piece, how are Raichu and your starter holding up?"
                                 
-                    a "Pretty healthy ma'am. We're on our way to our last gym battle any advice or LUCK your able to give?"
+                    a "Pretty healthy ma'am. We're on our way to our last gym battle.
+                                                
+                    a "Any advice you're able to give?"
                     
-                    c "Yes, I sure do, don't let those nerves effect your outcome on your next battle. Clear eyes full hearts Can't lose!!"
+                    c "Yes, I sure do."
+                    
+                    c "Don't let those nerves effect your outcome on your next battle. Clear year mind and you won't lose."
                     
                     a "Thank you so much helping me out in the beginning. I have to go visit my Mom. I'll {i}catch{/i} you later."
                     
-                    "HAHA!, pokemon pun"
+                    "HAHA! Pokemon puns... I sure am funny."
                     
                     hide road 
                     
@@ -2568,7 +2575,7 @@ label start:
                     
                     show house 
                     
-                    "Yes I've Made It!"
+                    "Yes! I've made it!"
                     
                     hide house 
                     
@@ -2576,21 +2583,25 @@ label start:
                     
                     show mom 
                     
-                    m "Hi Sweety, How was your battling experience with Master Takeo I told him to expect you, but I have some terrible news and I need your help right away!"
+                    m "Hi Sweety, How was your battling experience with Master Takeo?
                     
-                    a "Of Course Mom , what is it ?"
+                    m "I told him to expect you, but I have some terrible news and I need your help right away!"
                     
-                    m "See I wanted to surprise you and be your last gym leader battle , but this person came and Took over my gym and asked to battle you for it back"
+                    a "Of course Mom, what is it?"
                     
-                    a "take me there, NOW! "
+                    stop sound
                     
-                    "Who would take over an innocent lady's property ; just to battle with me?"
+                    play sound ("by.mp3")
+                    
+                    m "See, I wanted to surprise you and be your last gym leader battle, but this person came and took over my gym!
+                       
+                    m "They asked to battle you."
+                    
+                    a "What?! Take me there, NOW!"
+                    
+                    "Who would take over an innocent lady's property, just to battle with me?"
                     
                     hide home
-                    
-                    hide mom normal
-                    
-                    show mommy
                     
                     show mom
                     
@@ -2600,40 +2611,45 @@ label start:
                     
                     show lovein normal
                     
-                    e "Hello darling, nice to see she follows directions. What does this battle and this Gym mean to you and your precious mommy {i}HAHA{/i} "
+                    e "Hello darling, nice to see that she follows directions. What does this battle and this Gym mean to you and your precious mother?! {i}HAHA{/i}!!"
                     
-                    a "Honestly don't care, you've crossed the line here!"
+                    a "Honestly, I don't care! You've crossed the line here!"
                     
         label choicefinal:
                     
                     stop sound
                     
-                    play sound ("bensound-epic.mp3")
+                    play sound ("by.mp3")
                     
-                    "FINAL BATTLE FOR COLOSSEUM GYM!"
+                    "IT'S THE FINAL BATTLE FOR MY MOM'S GYM!"
                     
                     hide lovein normal
                     
                     show drag
                     
-                    "Love Interest sends out Dragonite"
+                    "Love Interest sends out Dragonite!"
                         
                     menu:
                     
                             "Use your starter!":
                                 
-                                e "Fair fighting huh? You've trained, keep at the Colosseum Gym"
+                                e "Wow, your starter's gotten really good!"                      
+                                                      
+                                e "Fair fight."
+                                               
+                                e "You've really trained too... I'll stop bothering you guys now."
                             
                                 jump choice16
                                 
                             "{i}Raichu{i}":
-                                e "Fair fighting huh? You've trained, keep at the Colosseum Gym"
                                 
-                                "You black out."
+                                e "Dude, your Raichu is nowhere near ready to beat my Dragonite."
+                                
+                                "You and your Pokemon pass out."
                                 
                                 "You really messed up this time."
                                 
-                                "Of course you get another chance."
+                                "Of course, you still get another chance because this is a game and we can send you back to the part where you messed up."
                                 
                                 stop sound
                                 
@@ -2652,15 +2668,20 @@ label start:
                     
                     show mom 
                     
-                    m "Thank you so much sweety, words can't describe how much I love you and appreciate your training skills, I want you to use those skills you learned and Take The Colosseum Gym in your hands"
+                    m "Thank you so much sweety, words can't describe how much I love you and appreciate your skills!
+                                                           
+                                                           
+                    m "I want you to use those skills you learned and take care of our gym. Mom's really getting tired."
                     
-                    m " Don't let ANYONE come in between you and your journey. You can become the BEST Gym Leader"
+                    m " Don't let ANYONE come in between you and your journey. You can become the BEST Gym Leader!"
                     
-                    "OBTAINED THE COLOSSEUM GYM KEY"
+                    "OBTAINED THE GYM KEY"
                     
-                    m "Now I'm going home. How about you go check out your new Gym"
+                    m "Now I'm going home. How about you go check out your new gym?"
                     
-                    a "Okay, thank you Mom. I love you so much. See you later!"
+                    a "Okay, thank you Mom.
+                    
+                    a "I love you so much. See you later!"
                     
                     "You run off excitedly."
                     
@@ -2668,7 +2689,7 @@ label start:
                     
                     show colosseum
                     
-                    "THIS is mine? THIS is what I've spent my journey to accquire?, Did I achieve my goal?"
+                    "THIS is mine? THIS is what I've spent my journey to accquire?  ...Did I achieve my goal?"
                     
                     stop sound
                     
