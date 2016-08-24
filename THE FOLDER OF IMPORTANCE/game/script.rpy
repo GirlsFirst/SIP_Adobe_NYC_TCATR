@@ -1026,7 +1026,7 @@ label start:
             
                 stop sound
                 
-                play sound ("happy.mp3")
+                play sound ("by.mp3")
                 
                 s "Prepare to get destroyed."
             
@@ -1451,7 +1451,7 @@ label start:
                                 
                                 a "I'm coming...!"
                                 
-                                "You force your feet to move! Your heart pounds rapidly, knowing thatthe situation had just taken a turn for the worse."
+                                "You force your feet to move! Your heart pounds rapidly, knowing that the situation had just taken a turn for the worse."
                                 
                                 "You dash towards the two desperately, praying for the best."
                                 
