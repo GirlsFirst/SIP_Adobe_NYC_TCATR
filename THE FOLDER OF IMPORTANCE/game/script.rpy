@@ -2110,7 +2110,7 @@ label start:
                                 
                 "Guess it's just my intuition. Been friends our entire lives, after all."
                 
-                e "Think that there is a volcano or somthing underneath the mountain, and that's why there are so many bath houses."
+                e "Think that there is a volcano or something underneath the mountain, and that's why there are so many bath houses."
                    
                 a "I guess that makes sense..."
                 
@@ -2260,6 +2260,8 @@ label start:
                         
                         hide spork angry
                         
+                        stop sound
+                        
                         show spork smile
                         
                         s "Hey, that was kind of impressive."
@@ -2307,7 +2309,11 @@ label start:
                     
                     show shrine 
                     
+                    "... Whew..."
+                    
                     show lovein normal
+                    
+                    "What? Uhm..."
                                            
                     "Uhh... Remind me why they're here again?"
                                                               
@@ -2459,6 +2465,8 @@ label start:
                     
                     "Whoa... This place is kind of crazy."
                     
+                    play sound ("oko.mp3")
+                    
                     b "Who goes there?"
                     
                     "I look around, but I don't see anyone."
@@ -2471,13 +2479,15 @@ label start:
                     
                     "He almost falls over!"
                     
-                    t "I'm sorry about that rusty entrance but hi,
+                    t "I'm sorry about that rusty entrance but hi,"
                        
                     t "I'm The Takeo Gym Leader. I was told to expect you from a special someone..."
                     
                     a "Hello, I'm here to battle you, Master Takeo."
                     
                     t "That's what I'm here for lad, step in my arena, get ready to begin!"
+                    
+                    stop sound
     
         label choice76:
                     
@@ -2509,11 +2519,13 @@ label start:
                             
                         "{i}Raichu{i}":
                         
-                            t "OH MY! I didn't expect that powerful pokemon.
+                            t "OH MY! I didn't expect that powerful pokemon."
                                              
                             t "How did I let a twerp beat me?! Scram! BEAT IT!"
                             
                             jump choice15
+                            
+                            hide hari
                         
         label choice15:
                     stop sound
@@ -2532,20 +2544,21 @@ label start:
                     
                     menu:
                         
-                        "Passerby's Car-ride":
+                        "Get a car ride from a stranger":
                                              
-                        "Uhh... Mom told me not to trust strangers."
-                                             
-                        jump choice001_for
+                            "Uhh... Mom told me not to trust strangers."
+                                                 
+                            jump choice001_for
                         
                         
                         "Bike":
-                        jump choice001_done
+                            
+                            jump choice001_done
 
                         
         label choice001_done:
                     
-                     hide city
+                    hide city
                     
                     show road
                     
@@ -2555,7 +2568,7 @@ label start:
                     
                     c "So you've made it back in one piece, how are Raichu and your starter holding up?"
                                 
-                    a "Pretty healthy ma'am. We're on our way to our last gym battle.
+                    a "Pretty healthy ma'am. We're on our way to our last gym battle."
                                                 
                     a "Any advice you're able to give?"
                     
@@ -2579,11 +2592,9 @@ label start:
                     
                     hide house 
                     
-                    show home 
-                    
                     show mom 
                     
-                    m "Hi Sweety, How was your battling experience with Master Takeo?
+                    m "Hi Sweety, How was your battling experience with Master Takeo?"
                     
                     m "I told him to expect you, but I have some terrible news and I need your help right away!"
                     
@@ -2593,7 +2604,7 @@ label start:
                     
                     play sound ("by.mp3")
                     
-                    m "See, I wanted to surprise you and be your last gym leader battle, but this person came and took over my gym!
+                    m "See, I wanted to surprise you and be your last gym leader battle, but this person came and took over my gym!"
                        
                     m "They asked to battle you."
                     
@@ -2601,13 +2612,12 @@ label start:
                     
                     "Who would take over an innocent lady's property, just to battle with me?"
                     
-                    hide home
                     
                     show mom
                     
                     m "You see, that person right there!"
                     
-                    hide mom 
+                    hide mom
                     
                     show lovein normal
                     
@@ -2627,7 +2637,7 @@ label start:
                     
                     show drag
                     
-                    "Love Interest sends out Dragonite!"
+                    "Your rival sends out Dragonite!"
                         
                     menu:
                     
@@ -2638,6 +2648,8 @@ label start:
                                 e "Fair fight."
                                                
                                 e "You've really trained too... I'll stop bothering you guys now."
+                                
+                                hide drag
                             
                                 jump choice16
                                 
@@ -2668,7 +2680,7 @@ label start:
                     
                     show mom 
                     
-                    m "Thank you so much sweety, words can't describe how much I love you and appreciate your skills!
+                    m "Thank you so much sweety, words can't describe how much I love you and appreciate your skills!"
                                                            
                                                            
                     m "I want you to use those skills you learned and take care of our gym. Mom's really getting tired."
@@ -2679,7 +2691,7 @@ label start:
                     
                     m "Now I'm going home. How about you go check out your new gym?"
                     
-                    a "Okay, thank you Mom.
+                    a "Okay, thank you Mom."
                     
                     a "I love you so much. See you later!"
                     
