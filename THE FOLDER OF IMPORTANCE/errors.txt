@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 539: expected ':' not found.
-    label choice99
-                  ^
+File "game/script.rpy", line 1227: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    hide lovein
+    ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227

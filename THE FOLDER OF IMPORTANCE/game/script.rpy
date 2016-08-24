@@ -20,7 +20,7 @@ init:
     image spork angry ="spork.png"
     image samurai ="sam.png"
     image mom ="mom.png"
-    image home = "home.jpg"
+    image home = "house.jpg"
     image room ="room.jpg"
     image battle ="mommy.png"
     image temple ="temple.jpg"
@@ -36,6 +36,9 @@ init:
     image kang="kang.png"
     image butter="butterfree.png"
     image raichu="raichu.png"
+    image ball="ball.png"
+    image black="black.png"
+    image garden ="garden.jpg"
     
 # Declare characters used by this game.
 define player_name = Character("#C9C9C9")
@@ -44,8 +47,8 @@ define z = Character('Trainer', color="#C9C9C9")
 define b = Character("??????", color="#000000") 
 define c = Character('Professor Maple', color="#87421F")
 define d= Character("Announcer", color="#000080")
-define rival_name= Character("#830303")
-define e = Character(color = "#830303")
+define rival_name= Character("#FF0000")
+define e = Character(color = "#FF0000")
 define f = Character("Devin", color = "006400")
 define s = Character("Electra", color="#FFFF00")
 define t = Character("Takeo", color="#8E2323")
@@ -72,15 +75,24 @@ label start:
     
     "You walk through Pritempts Plains minding your own business, when a large foot knocks you over."
     
-    "Raising your head you see a Raichu running off into the distance."
+    show raichu
+    
+    "Raising your head, you see a Raichu running off into the distance."
                       
     b "Heads up! Think Fast!"
+
+    hide raichu
+
+    show ball
 
     "Three Pokeballs fall to your feet."
      
     b "Make sure that Raichu doesn't get away!"
     
     z "Am I supposed to choose a Pokeball?"
+    
+    hide ball
+    
     
     label choicejk:
             
@@ -155,7 +167,7 @@ label start:
         
         z "Turtwig used absorb!.....Wait, how do I know all this?"
     
-        "The raichu became confused." 
+        "The Raichu became confused." 
         
         hide turt
         
@@ -167,7 +179,7 @@ label start:
         
         z "Chimchar use ember!.....Wait, how do I know all this?"
         
-        "The raichu got inflicted with a burn and turned its tail down in surrender." 
+        "The Raichu got inflicted with a burn and turned its tail down in surrender." 
         
         hide chim
         
@@ -179,7 +191,7 @@ label start:
         
         z "Piplup use Bubble!....Wait, how do I know all this?"
         
-        "It was a critical hit! The raichu fainted."
+        "It was a critical hit! The Raichu fainted."
         
         hide pip
         
@@ -191,6 +203,8 @@ label start:
         
         z " Alright, I'll give it a shot!"
         
+        show ball
+        
         "....1"
         
         "....2"
@@ -201,6 +215,7 @@ label start:
         
         b "That was awesome, kid!"
         
+        hide ball
         
         jump choice2_name
     
@@ -211,9 +226,7 @@ label start:
        
         show prof normal
        
-       
-        
-        
+
         "You raise your head to see an intellectual looking woman grinning back at you."
        
         stop sound 
@@ -256,13 +269,23 @@ label start:
         
         a "I can't wait to tell my mom." 
         
-        c "So...since you're pretty much a pokemon trainer now, what are some of your aspirations?"
+        c "So... Since you're pretty much a pokemon trainer now, what are some of your aspirations?"
         
         menu:
             
-            "I want to take over my mother's gym.":
+            "I want to take over my mother's Pokemon gym!":
             
-                c "Hmm, you've got a lot of work ahead of you trainer. I'd like you to visit Colosseum Gym."
+                c "Hmm, you've got a lot of work ahead of you, trainer. I'd like for you to visit Colosseum Gym."
+                
+                c "You'll meet a lot of powerful trainers there. If you battle your way to the top, you'll be able to advance."
+                
+                c "After defeating all the gyms in your path, your mom will await you. She's the last gym leader, isn't she?"
+                
+                a "Uh... Okay. I didn't expect this to happen, but being a trainer sounds pretty exciting."
+                
+                "You look down at your pokemon and grin."
+                
+                a "Let's do this!"
                 
                 hide back
                 
@@ -270,17 +293,23 @@ label start:
                 
                 jump choice4_1
                 
-            "I want to battle with my pokemon.":
+            "I want to battle with my pokemon!":
                 
                 jump choice3_2
                 
-            "I want to level up my pokemon so they can mega evolve.":
+            "I want to level up my pokemon so they can evolve!":
                 
                 jump choice3_2
                     
         label choice3_2:
         
-        c "Great! Now I'd would love for you to visit Lowestof Gym and battle the pokemon trainers there!"
+        c "Great! Now I would love for you to visit Lowestof Gym and battle the pokemon trainers there. If you beat their gym leader, you'll be able to advance onwards."
+        
+        c "The last gym leader is your mom, right? If you beat her, you'll become the best trainer in the world!"
+        
+        c "Until someone else comes along and beats you, that is."
+        
+        c "Along the way, you'll bond with your Pokemon and if they get strong enough, you can evolve them!"
         
         hide prof normal 
         
@@ -297,7 +326,7 @@ label start:
         
         show city
         
-        "You make your way to Colosseum City ready to battle and see trainers with different types of pokemon."
+        "You make your way to Colosseum City, ready to battle, and see trainers with different types of pokemon."
         
         a "Wow... This place is huge. And kind of scary. Kind of terrifying. Jeez, I should train a bit more."
         
@@ -321,6 +350,10 @@ label start:
         
         "You head back into the city."
         
+        a "I'm ready! Let's do this!"
+        
+        "You head to the stadium, and hear a loud booming voice."
+        
         d "All trainers come to the front of the stadium!"
         
         a "Oh man, it's my turn."
@@ -334,7 +367,7 @@ label start:
         
                 "Our Starter Pokemon we used!":
                 
-                    d "Alright now come on out Rookie Keith!"
+                    d "Alright, now come on out, Rookie Keith!"
                     
                     show trainer
                     
@@ -342,29 +375,32 @@ label start:
                     
                     "{i}Cue battle transition{/i}"
                     
+                    "Houndor and Sneasel get absolutely demolished by your amazing starter Pokemon."
+                    
                     a "The was way too easy!" 
                     
                     hide trainer
+                    
+                    jump choice5_2
                     
                     
                 "{i}Let's go, Raichu!{/i}":
                     
                     show raichu
                     
-                    d "Alright now come on out Fighter Bryan!"
+                    d "Alright now come on out, Fighter Bryan!"
                     
                     hide raichu
                     
                     show fighter
                     
-                    'Fighter Bryant sends out Crawdaunt and Walrein.'
+                    'Fighter Bryan sends out Crawdaunt and Walrein.'
                     
                     '{i}Cue battle transition{/i}'
                     
                     "Raichu uses Uber Thunderbolt on Fighter Bryant's Pokemon! They black out."
                     
                     hide fighter
-                    
                     
                     
                     jump choice5_2
@@ -472,6 +508,12 @@ label start:
             
             hide lovein normal
             
+            a "Wow... What an aggressive start to my Pokemon journey. Didn't see them coming, really."
+            
+            a "Pretty cool, though. Now I can brag to them about my Pokemon. They {i}are{/i} my childhood friend, after all."
+            
+            "You whistle to yourself as you make yourway to Lowestof Gym."
+            
             hide road
             
             stop sound
@@ -519,6 +561,7 @@ label start:
                     
                     hide karate
                     
+                    
                     hide city 
                     
                     jump choice6
@@ -534,6 +577,12 @@ label start:
                   
             show devin normal 
             
+            a "{i}The gym leader is a little boy? Uh....{/i}"
+            
+            a "Whelp. Get ready to get rekt, kid!"
+            
+            "You smile confidently and step onto the stage."
+            
             play sound ("bensound-epic.mp3")
             
             label choice99:
@@ -547,14 +596,28 @@ label start:
             menu:
             
                 "Starter Pokemon":
-                
-                    d "Wow! That was heartbreaking. Truly! The winner lost the duel to Gym Leader Devin."
                     
-                    a "Aw that sucks! I hope I'll do better next time."
+                    show butter
+                    
+                    "The Butterfree uses Gust! Ouch, that must hurt."
+                    
+                    a "Argh! We're losing! Come on, we can do this!"
+                    
+                    "..."
+                
+                    d "Wow! That was heartbreaking."
+                    
+                    d "Truly heartbreaking!"
+                    
+                    d "The winner lost the duel to Gym Leader Devin."
+                    
+                    a "Aw, that sucks! I hope I'll do better next time."
                     
                     "Your Pokemon black out."
                     
                     "You rush to the Pokemon center and heal your Pokes."
+                    
+                    hide butter
                     
                     jump choice99
                     
@@ -565,12 +628,36 @@ label start:
                     hide devin normal
                 
                     show raichu
+                    
+                    a "Raichu, use Spark!"
+                    
+                    "As Raichu sends bolts of electricity towards the Butterfree, the crowd cheers in delight."
+                    
+                    show butter
+                    
+                    "The Butterfree cries out in pain and faints!"
+                    
+                    hide butter
                 
                     d "Wow! That was spectacular. Amazing! The winner has won the duel and receives a $20 gift card to Apple Bees."  
                     
-                    a "Whoop whoop, I'm glad my training paid off."
+                    a "Whoop whoop! I'm glad my training paid off."
                     
                     hide raichu 
+                    
+                    d "The underdog trainer has just won the gym battle!"
+                    
+                    "As the crowd cheers, Devin walks up to you silently. He hands you the Lowestof Gym Badge, and waves at the crowd."
+                    
+                    "His smile is a tiny bit sad."
+                
+                    a "Ah... Good match. I had fun. Uh... I'll see you around."
+                    
+                    d "With this Gym Badge, this trainer will be able to go to Olempec Town, where Leader Electra awaits! Let's give a round of applause and send the trainer on their way!"
+                    
+                    "The audience cheers."
+                    
+                    "You walk out of the gym slowly, with a bright smile on your face."
                     
                     hide gym
 
@@ -606,7 +693,6 @@ label start:
                                                                 
             show lovein normal
                                                                                     
-        
             $ rival_name = renpy.input("What is your rival's name?")
         
             $ rival_name = rival_name.strip()
@@ -627,21 +713,29 @@ label start:
 
                 "Yes":
 
-                    "{i}Seriously?{/i} Ahem.. I mean, that's cool. I guess. Haha."
+                    e "{i}Seriously? YES!{/i}"
+                    
+                    e "Ahem.. I mean, that's cool. I guess. Haha."
 
                     jump choice7
 
                 "No":
 
                     "............."
+                    
+                    "Your rival looks at you disbelievingly."
+                    
+                    e "WHAT?!@ We've known each other for so long! Come on, we're best friends, right?!"
+                    
+                    "........"
 
-                    "I'm not leaving here until you say yes."
+                    e "I'm not leaving here until you say yes."
 
                     jump choice6loop
 
         label choice7:
 
-            a "On towards the gym!"
+            a "Okey doke. On towards the gym!"
             
             hide city
             
@@ -680,17 +774,22 @@ label start:
             
             e "I think I see him!"
             
+            e "Get ready for the first gym battle of your life!"
+            
             hide lovein normal
           
             show devin normal
             
-       
        
         label choice123:
         
             stop sound 
             
             play sound ("bensound-epic.mp3")
+            
+            "You step onto the stage. The crowd is cheering, watching your every move."
+            
+            a "{i}Wow, this is kind of nerve-wracking.{/i}"
             
             d "Gym Leader Devin has just sent out Butterfree. Oooh, fierce!"
             
@@ -701,14 +800,30 @@ label start:
             menu:
             
                 "Starter Pokemon":
-                
-                    d "Wow! That was heartbreaking. Truly! The winner lost the duel to Gym Leader Devin."
                     
-                    a "Aw that sucks! I hope I'll do better next time."
+                    "The Butterfree uses Gust! Ouch, that must hurt."
+                    
+                    a "Argh! We're losing! Come on, we can do this!"
+                    
+                    "..."
+                
+                    d "Wow! That was heartbreaking."
+                    
+                    d "Truly heartbreaking!"
+                    
+                    d "The winner lost the duel to Gym Leader Devin."
+                    
+                    a "Aw, that sucks! I hope I'll do better next time."
                     
                     "Your Pokemon black out."
                     
                     "You rush to the Pokemon center and heal your Pokes."
+                    
+                    "..."
+                    
+                    a "I'll be back for sure!!"
+                    
+                    "..."
                     
                     stop sound
                     
@@ -720,16 +835,56 @@ label start:
                 
                     show raichu
                 
+                    a "Raichu, use Spark!"
+                    
+                    "As Raichu sends bolts of electricity towards the Butterfree, the crowd cheers in delight."
+                    
+                    a "YEAH, LET'S GO, THAT'S RIGHT, TAKE THAT LITTLE BOY!!!!!!"
+                    
+                    show butter
+                    
+                    "The Butterfree cries out in pain and faints!"
+                    
+                    hide butter
+                    
+                    stop sound
+                
                     d "Wow! That was spectacular. Amazing! The winner has won the duel and receives a $20 gift card to Apple Bees."  
                     
-                    a "Woop woop, I'm glad my training paid off."
+                    a "Whoop whoop! I'm glad my training paid off."
                     
                     hide devin normal
                     
                     show lovein normal
                     
                     e "I knew you could do it!"
-
+                    
+                    "You turn to see your rival running towards you, with an uncharacteristically bright smile plastered onto their face."
+                    
+                    a "Hey! Yeah, that was {i}waaaaay{/i} too easy. I bet you could do it too; you have a Dragonite, after all."
+                    
+                    e "Honestly, I think so too. Well, I'm still proud of you for beating your first ever gym leader!"
+                    
+                    hide lovein
+                    
+                    show devin normal
+                    
+                    "Your conversation is interrupted by Devin, who hands you your Lowestof Gym Badge."
+                    
+                    "You thank him and turn back to your rival, who is waiting patiently by the door of the gym."
+                    
+                    hide devin normal
+                    
+                    show lovein
+                    
+                    a "So, what next?"
+                    
+                    e "Next up is Olempec Town, where an Electric type Gym leader lady awaits!"
+                    
+                    a "Oh man, more fighting. Alright, let's go!"
+                    
+                    "You grin at each other as you exit the gym."
+                     
                     hide gym
                    
                     hide raichu
@@ -760,7 +915,7 @@ label start:
                 
                 e "SERIOUSLY? Ugh, fine."
                                     
-                "You laugh. Your rival looks grouchy; they're glaring at the mountain."
+                "You laugh, amused by your friend's antics. They look grouchy as they glare at the looming mountain ahead."
                                                                                        
                 a "Hey, you'll be fine. You won't die."                                                                       
                 
@@ -770,9 +925,13 @@ label start:
                 
                 show mtown
                 
+                ".............."
+                
                 show lovein normal
                 
                 a "And here we are!"
+                
+                e "Oh man. I literally thought I was going to die. I'm so tired."
                 
                 e "Okay, but why are there so many hot springs?"
                 
@@ -782,13 +941,27 @@ label start:
                 
                 a "Let's keep going, it looks like Olempec's gym is at the top."
                 
+                e "Wait... Let's take a break first and grab some food."
+                
+                "..."
+                
+                "You stop at a shop and grab some turkey sandwiches."
+                
+                a "These good?"
+                
+                e "Perfect. Let's eat them on the way!"
+                
                 hide mountain
                 
                 hide lovein normal
                 
                 show peak
                 
+                "....."
+                
                 show lovein normal
+                
+                stop sound
                                                            
                 "You arrive at the top of the mountain. The ground is littered with piles of snow."
                                                            
@@ -802,7 +975,7 @@ label start:
                 
                 a "You afraid of heights or something? Or are you just cold?"
                 
-                e "As a matter of fact, I am both suffering from my fear of heights as well as cold."
+                e "As a matter of fact, I am both suffering from my fear of heights as well as the cold."
                 
                 e "I doubt that the Pokegods ever wanted us to be this close to the sky!"
                                                                                          
@@ -810,14 +983,14 @@ label start:
                 
                 b "I'm es-static that you've climbed this high to come see me."
                 
-                b "Ohm...I'm over here kids."
+                b "Ohm...I mean, {i}I'm{/i} over here, kids."
                 
                 
                 show spork smile
                 
-                "We turned around to see a fashionable lady stading behind us."
+                "We turned around to see a fashionable lady standing behind us."
                 
-                s "Whats up? I'm this gym's leader Electra."
+                s "Whats up? I'm this gym's leader, Electra."
                 
                 s "I'm shocked to see a couple kids hoping to battle me! Y'all should grow up first."
                 
@@ -831,23 +1004,33 @@ label start:
                 
                 e "Wait. Before you guys start fighting, I have a quick question."
                 
-                e "Why did you decide to build this gym at the top of a mountain? Maybe that's why you never get any younger visitors!"
+                e "Why did you decide to build this gym at the top of a mountain? Maybe that's why you never get any visitors!"
                 
-                e "And you seemed like such a {i} grounded {/i} person."
+                e "And you seemed like such a {i}grounded {/i} person. Hah, get it? Grounded."
+                
+                a "Oh my god."
                 
                 hide lovein normal
                 
                 show spork angry 
                 
                 s "Tell your friend to be quiet before I throw them off this cliff."
+                
+                a "Lets! Battle!"
         
         label choice90:
             
+                show peak
+                
+                show spork angry
+            
                 stop sound
                 
-                play sound ("bensound-epic.mp3")
+                play sound ("happy.mp3")
+                
+                s "Prepare to get destroyed."
             
-                d "Electra sent out Luxray."
+                d "Gym Leader Electra sent out Luxray!"
                 
                 show lux
                 
@@ -856,8 +1039,16 @@ label start:
                 menu:
                     
                     "Send out your starter!":
+                        
+                        "Electra's Luxray used Volt Switch, quickly followed by a Wild Charge!"
+                        
+                        a "Argh!"
+                        
+                        "You have no time to react."
                                             
-                        a "Ah, shoot! This Luxray is strong!"                    
+                        a "Ah, shoot! This Luxray is so strong!"
+                        
+                        "You cry in dismay as your Pokemon faints in your arms."
                         
                         a "I can't believe I lost!"
                         
@@ -866,28 +1057,46 @@ label start:
                         show spork smile
                         
                         "Your Pokemon black out."
+                        
+                        a "I'll be back for sure!!!"
                     
+                        hide peak
+                        
+                        show mtown
+                        
                         "You rush to the Pokemon center and heal your Pokes."
                         
+                        "..."
+                        
+                        hide mtown
+       
                         jump choice90
                         
                     "Send out the Raichu":
                         
-                        show lux
+                        hide lux 
+                        
+                        show raichu
                                  
                         "Your Raichu uses Thunder Wave. It's not very effective but it looks like Electra's Luxray is paralyzed!"
                                                                                                           
-                        "Electra's Luxray passes out."
+                        "Electra's Luxray passes out as your Raichu follows up with Thunder Fang."
+                        
+                        a "Yes! I think we won!"
+                        
+                        stop sound
                                                       
-                        hide lux                              
+                        hide raichu                            
                         
                         show lovein normal
                         
                         e "Why would you send out Raichu when she has a Luxray? They're both electric types."
                         
-                        a "I still won, chill out!"
+                        a "I still won, chill out fam!"
                         
                         hide lovein normal
+                        
+                        play sound ("happy.mp3")
                         
                         show spork smile
                         
@@ -897,12 +1106,22 @@ label start:
                         
                         s "I feel bad for you."
                                                                                      
-                        s "Well, good luck to you guys, wherever you go."
+                        s "Well, good luck to you guys, wherever you go. Here is the Olempec Gym Badge."
+                        
+                        "Electra hands a shiny yellow badge to you. You can't help but gawk."
+                        
+                        a "IT'S SO SHINY!"
+                        
+                        "Electra laughs and pats your arm."
                                                                                      
-                        s "And good luck with your friend. Don't bicker too much! Ahh, young love."   
+                        s "And good luck with your friend too. Don't bicker too much!"
+                        
+                        "She looks over at your rival and laughs."
+                        
+                        s "Ahh, young love."  
+                        
+                        a "Urgh, stop embarrassing me."
                                                                                                    
-                                                            
-                                                                                     
                         stop sound
                         
                         jump choice01
@@ -913,12 +1132,13 @@ label start:
                         
                         play sound ("bensound-buddy.mp3")
                         
-                        s "Take care, kids!"
-                    
+                        s "Take care, kids! The next gym is at Taketomi Island. I hope you lose! If you do, come back and {i}chill{/i} with me."
                                                                                 
-                        "Her eyebrow twitches."
+                        "Her eyebrow twitches. Looks like she's bitter about losing."
                                                                                 
-                        "{i}Hah... Sure we'll be back soon.{/i}"
+                        "{i}Hah... Sure we'll lose.{/i} (sarcasm, obviously)"
+                        
+                        "{i}Also, we're not coming back.{/i}"
                                                                 
                         hide spork smile
                                                                 
@@ -932,7 +1152,7 @@ label start:
                         
                         show spork smile
                                            
-                        s "It would really {i} hertz{i} my feelings if you didn't come back to visit!"                   
+                        s "It would really {i} hertz{/i} my feelings if you didn't come back to visit!"                   
                          
                         hide spork smile
                                                                                                       
@@ -950,9 +1170,9 @@ label start:
                         
                         e "The last place we have to go to is Taketomi Island."
                         
-                        a "I've always wanted visit this place!"
+                        a "I've always wanted visit that place!"
                         
-                        e "The place is very ....Different."
+                        e "That place is very ....Different."
                         
                         e "Culturally, that is."
                         
@@ -962,9 +1182,27 @@ label start:
                         
                         a "Wow! Okay, now I'm really excited!"
                         
-                        e "Don't get too excited, you still have to beat them."
+                        e "Don't get too excited! You still have to beat them."
                         
                         a "Chill out, {i}mom{/i}, I can handle this!"
+                        
+                        a "Ugh, honestly I wish you could help me out sometimes."
+                        
+                        "Your friend laughs, and pats you on the head."
+                        
+                        e "More fun this way! Don't worry, I'll always stick around if you're in trouble."
+                        
+                        "You brush their hand off and give them a playful shove."
+                        
+                        a "Yeah, I know. Deep down. {i}Very{/i} deep down. You're not very obvious when it comes to friendship, you know?"
+                        
+                        e "...Well, I guess. I {i}do{/i} care, sometimes."
+                        
+                        "You turn to see your redhead friend, whose face matches the color of their hair."
+                        
+                        a "Chill, fam. Don't make me feel embarrassed."
+                        
+                        "You feel slightly thrown off, as an awkward pause ensues. You decide to start whistling randomly, and look in the other direction."
                         
                         hide templeroad 
                         
@@ -972,9 +1210,13 @@ label start:
                         
                         show shrine
                         
+                        "......"
+                        
+                        a "Wow!"
+                        
                         show lovein normal
                         
-                        a "This place is so cool."
+                        a "Hey, we're here! This place is so cool."
                         
                         e "Too much red, it's hurting my eyes!"
                         
@@ -998,21 +1240,48 @@ label start:
                         
                         e "I literally just looked at the billboard that said, 'town map.'"
                         
-                        a "Okay then, you lead the way!"
-                        
-                        hide shrine
+                        a "WOW, you're so smart! Okay then, you lead the way."
                         
                         hide lovein
                         
+                        "You roll your eyes as your rival starts walking in a random direction."
+                        
+                        a "You better not get us lost."
+                        
+                        "In front of you, your friend sighs dramatically."
+                        
+                        e "We'll be fine!"
+                        
+                        hide shrine
+                        
                         show temple
                         
-                        a "Wow look at this view!"
+                        play sound ("happy.mp3")
+                            
+                        
+                        a "Are we here yet? Is this the place? Did you really lead us to the right area?"
+                        
+                        a "I knew I could trust you!"
+                        
+                        "You tackle your friend, beaming brightly. They roll their eyes at you."
+                        
+                        a "Hey, that's my line! I mean, my move! Whatever!"
+                        
+                        "......"
+                        
+                        "You guys keep walking."
+                        
+                        a "Wow, look at this view!"
                         
                         a "And I can see the gym from here too!"
                         
                         show lovein normal
                         
-                        a "And you just had to ruin the moment didn't you?"
+                        "Your friend stops and turns around. They snap their fingers in your face."
+                        
+                        a "Ahh!"
+                        
+                        a "And you just had to ruin the moment, didn't you?"
                         
                         e "Quit your {i}gasping{/i} and {i}gawking{/i} and let's go already."
                         
@@ -1020,9 +1289,35 @@ label start:
                         
                         e "Hey! I was so nice to you when you were little! Especially when your mom left to defend her gym."
                         
-                        e "...I was always there for you."
+                        stop sound
                         
-                        a "Yeah... I know. Sorry. You should learn to deal with me if we're gonna be travelling together, though."
+                        e "..."
+                        
+                        play sound ("sad.mp3")
+                        
+                        e "Sorry. I didn't mean to bring up bad memories."
+                        
+                        "They pat your back, obviously trying very hard to be reassuring."
+                        
+                        e "It's okay though, right?"
+                        
+                        e "I was always there for you."
+                        
+                        a "Yeah... I know. Sorry."
+                        
+                        a "I'm really glad you're travelling with me, honestly."
+                        
+                        a "Would be super lonely without you."
+                           
+                        "You sigh and force a smile."
+                        
+                        a "Come on, let's talk. I'm not the type to get all mushy and sad for no reason."
+                        
+                        stop sound
+                        
+                        "Your friend peers in your face. They seem really relieved that you've pulled yourself together."
+                        
+                        e "Alright. Let's go kick some samurai butt!"
                 
                         hide temple
                         
@@ -1032,7 +1327,17 @@ label start:
                         
                         show intemple
                         
-                        "{i}It's so cool.{/i}"
+                        "..."
+                        
+                        a "Wow!"
+                        
+                        a "{i}It's so cool!{/i}"
+                        
+                        "A giant statue sits at the very end of the temple hall. On the sides, behind the columns, is empty air."
+                        
+                        a "Wow, that's kind of dangerous..."
+                        
+                        a "Someone could get hurt if they fall down there."
                         
                         show lovein normal
                         
@@ -1040,7 +1345,7 @@ label start:
                         
                         e "Could use a little bit of interior design."
                         
-                        a "Okay... Tf this place looks decent, what does your room look like? The Taj Mahal?!"
+                        a "Okay... If this place looks just {i}decent{/i}, what does your room look like? The Taj Mahal?!"
                         
                         e "Chill, I was just giving my constructive criticism."
                         
@@ -1054,17 +1359,27 @@ label start:
                         
                         hide lovein normal
                         
-                        b "If you guys came here to flirt then I kindly ask you to leave."
+                        b "If you guys came here to flirt, then I kindly ask for you to leave."
                         
-                        a "Listen, {i}whoever you are{/i}, I came to battle and my friend came to nag... I mean tag along."
+                        a "Listen, {i}whoever you are{/i}, I came to battle and my friend came to nag... I mean, uh, tag along."
+                        
+                        "Your rival shoves their elbow into your side aggressively." 
+                        
+                        e "Hey! I'm here to help you along on your journey."
+                        
+                        a "Ouch! I don't care, just stop that."
+                        
+                        "You push them away and turn towards the direction of voice."
                         
                         show samurai
                         
+                        "..."
                         
+                        a "WHOA!"
                         
-                        t "That's great. I'm Takeo, and I specialize in fighting Pokemon. I haven't had challengers in months."
+                        a "Argh! Get out of my face!"
                         
-                        a "Argh! Get out of my face!
+                        t "Yeah, that's great. Hi guys. I'm Takeo, and I specialize in fighting Pokemon. I haven't had challengers in months, though."
                         
                         a "...Wow! You're really a samurai!"
                         
@@ -1084,7 +1399,9 @@ label start:
                         
                         play sound ("bensound-epic.mp3")
                         
-                        d "Gym Leader Takeo sent out Hariyama."
+                        d "Gym Leader Takeo sent out Hariyama!"
+                        
+                        a "Oh shoot! I forgot to heal my Raichu!"
                         
                         show hari
                         
@@ -1098,23 +1415,117 @@ label start:
                                 
                                 show samurai
                                 
-                                "Ouch! I seriously lost to this guy?!"
+                                t "You think you can beat me with that little thing? You're naiive!"
                                 
-                                t "I always go down kicking and scratching, or should I say kicking and {i}punching{/i}?"
+                                hide samurai
                                 
-                                "Cue laugh track"
+                                show hari
                                 
-                                "Your Pokemon black out."
-                                
-                                a "I'll be back in a jiffy!"
-                                     
-                                "..."
+                                "Hariyama used Close Combat! It sends your starter Pokemon flying towards your friend, who is standing at the edge of the temple, right next to the columns!"
                                 
                                 stop sound
                                 
-                                jump choice45
+                                play sound ("woo.mp3")
                                 
-                            "Who's that pokemon? It's {i}Raichu{/i}!" :
+                                a "Oh no! Watch out!"
+                                
+                                hide hari
+                                
+                                show lovein normal
+                                
+                                e "Urgh!"
+                                
+                                "Your rival catches your injured Pokemon, barely able to stop its impact!"
+                                
+                                "Together, they wobble precariously on the edge of the temple!"
+                                
+                                e "OH MY JEEZ I'M GOING TO DIE!!!"
+                                
+                                hide lovein normal
+                                
+                                "The screams of your friend echo through the hall. Your eyes widen in shock!"
+                                
+                                a "Hang on!"
+                                
+                                "You're overcome with fear. Your legs shake, refusing to budge as you watch your companions on the brink of potential death."
+                                
+                                a "I'm coming...!"
+                                
+                                "You force your feet to move! Your heart pounds rapidly, knowing thatthe situation had just taken a turn for the worse."
+                                
+                                "You dash towards the two desperately, praying for the best."
+                                
+                                show lovein normal
+                                                          
+                                e "Ahhh!"
+                                
+                                "You reach out and grab onto your friend's hand."
+                                
+                                "..."
+                                
+                                a "Come on!"
+                                
+                                "..."
+                                
+                                hide lovein normal
+                                
+                                "With a grunt of effort, you heave them back onto their feet. You just saved your friends!"
+                                
+                                show lovein normal
+                                
+                                e "Urgh..."
+                                
+                                "They collapse against you, knees shaking."
+                                
+                                a "Hey, are you alright?!@"
+                                
+                                e "I-I'm okay..."
+                                
+                                hide lovein normal
+                                
+                                stop sound
+                                
+                                "You gently set your rival and wounded Pokemon on the ground, and turn towards Takeo, eyes blazing."
+                                
+                                a "Who designed this temple?! Anyone could get hurt falling off the sides!"
+                                
+                                "Angrily, you call on the Pokemon Center nurse, who just happened to be at the temple for her daily worship."
+                                
+                                "As she hurriedly tends to your starter Pokemon, you glare at Takeo, who stands nearby."
+                                
+                                a "I can't believe that happened! I could literally smack you right now!"
+                                
+                                show samurai
+                                
+                                t "Hey! I'm sorry! I didn't know that would happen... But don't worry!"
+                                
+                                t "If your heart is free of demons, you will never die!"
+                                
+                                a "UGH!"
+                                
+                                "Stomping your foot in frustration at losing your battle and having such a frightening encounter, you cross your arms and turn away."
+                                
+                                t "H-Hey... I'm sorry, alright? Look, I know I'm not supposed to do this, but I feel {i}really{/i} bad that your friends almost died."
+                                
+                                t "Uhh... Ahem. Here, take this. No one saw, okay?"
+                                
+                                "Takeo hurriedly thrusts a shiny thing into your hand."
+                                
+                                hide samurai
+                                
+                                "Upon closer inspection, you realize that it's the gym badge!"
+                                     
+                                "..."
+                                
+                                a "I really didn't expect that."
+                                
+                                "Without so much as looking back at Takeo, you grab your friend and turn leave the temple."
+                                
+                                stop sound
+                                
+                                jump choice13
+                                
+                            "Send out Raichu, who is injured!" :
                                 
                                 hide hari
                                 
@@ -1122,21 +1533,23 @@ label start:
                                                     
                                 a "Let's go Raichu! You're the best!"
                                                         
-                                "Raichu beats up Takeo's Hariyama."
+                                "Raichu gets beaten up by Takeo's Hariyama."
                                                                    
                                 hide raichu
                                 
                                 show samurai
+
+                                t "Dude, your Raichu wasn't even full health to begin with!"
                                 
-                                a "That was like taking candy from a baby."
+                                "Ugh... I made a mistake."
                                 
-                                a "Or should I say, taking steroids from a weight lifter."
+                                "You take your Raichu to the Pokemon center to get healed up."
                                 
-                                t "Hey!, You know I would never take any performance enhancing substanc-"
+                                "..."
+            
+                                "You really should have had more insight."
                                 
-                                "Cue laugh track"
-                                
-                                jump choice13
+                                jump choice45
                                 
         label choice13:
                             stop sound
@@ -1149,54 +1562,153 @@ label start:
                             
                             t "Good luck on your journey. May the love gods be in your favor!"
                                                                                               
-                            "Takeo looks into the distance wistfully."
+                            "Takeo looks into the distance wistfully. He also looks a bit apologetic."
                                                                               
-                            a "{i}What's up with this dude...{/i}
-                            
-                            hide samurai
-                            
-                            show lovein normal
-                            
-                            e "Jeez, what the heck!"
-                                       
-                            "You turn to look at your rival. They're blushing. You stifle a laugh."           
-                                       
-                            e "I fully believe that the protein shakes are getting to that guy's head."
-                            
-                            a "Don't make fun of him, he could hunt you down one day!"
-                            
-                            e "I'd actually love to see him try."
-                            
-                            hide intemple
-                            
-                            hide lovein normal
-                            
-                            show road
-                            
-                            a "We know where the last gym leader is."
+                            a "{i}What's up with this dude...{/i}"
                             
                             stop sound
                             
-                            play sound ("bensound-love.mp3")
+                            hide samurai
+                            
+                            hide intemple
+                            
+                            show road
                             
                             show lovein normal
                             
+                            
+                            e "Jeez, what the heck!"
+                            
+                            play sound ("bensound-love.mp3")
+                                       
+                            "You turn to look at your rival. They're blushing. You stifle a laugh."           
+                                       
+                            a "I fully believe that the protein shakes are getting to that guy's head."
+                            
+                            e "For saying whatever that thing was about love gods, and the fact that you had to save me!"
+                            
+                            a "Hey, chill out. I'm glad you're okay."
+                            
+                            "You give them a hug, and smile brightly."
+                            
+                            a "You know, we got the gym badge."
+                            
+                            e "Wait, seriously?! I can't believe you!"
+                               
+                            "Your rival laughs along with you, and the previous heartstopping events seem to have been forgotten."
+                                                                                                                                  
+                            hide lovein normal
+                            
+                            "...."
+                                  
+                            "You walk in comfortable silence."
+                                                              
+                            "That almost-catastrophe seems to have brought you two closer."   
+                                                                                           
+                            "...."                                                               
+                            
+                            a "We know where the last gym leader is."
+                             
+                            show lovein normal                                         
+                                                                     
+                            e "Your mom... She's waiting."                                         
+                            
+                            stop sound
+                            
+                            
+                            
                             e "This has been the moment you've been waiting for!"
                             
-                            a "Ah I recognize this path more than anyone else."
+                            a "Ah, I recognize this path more than anyone else. This is our old house, before I moved out to live with my dad."
                             
                             e "I guess this is where I drop you?"
                             
                             a "Yeah I'll see you ar-"
+                                      
+                            play sound ("bensound-romantic.mp3")         
                             
-                            e "Listen I've had alot of fun going on this trip with you."
+                            e "Listen... I've had a lot of fun going on this trip with you."
                             
-                            e "I'm really happy you let me {i} nag{/i} along."
+                            e "I'm really happy you let me {i}nag{/i} along."
                             
                             e "Come see me if you need anything."
+                                 
+                            a "Fine, fine."
+                                 
+                            "Taken aback by their somewhat brutal and unexpected honestly, you can't help but blush."
                             
-                            a "Wow they're being surprisingly nice today."
+                            a "Uhm... You've been surprisingly nice recently. I guess. Uh..."
+                                          
+                            a "It's not even like we're not seeing each other again... Why are we getting so sentimental?"
+                                                     
+                            hide lovein normal                         
+                                                     
+                            "But as you say these words, memories flash through your mind."
+                                                     
+                            hide road
                             
+                            stop sound
+                            
+                            play sound ("sad.mp3")
+                                                     
+                            show black                         
+                                                     
+                            "You can still hear the echo of the door closing in front of you, as your father holds you back."
+                                                     
+                            "Your chubby young fingers are reaching for the door. You can barely see out of your blurry, teary vision."
+                                                     
+                            a "M-Mom..."
+                                                     
+                            "Beside you, your childhood friend holds onto your hand reassuringly."
+                                                     
+                            e "It's okay. I'm here! We can be together. Forever..."
+                                            
+                            "The young voice echos through your mind..."
+                                            
+                            "{i}End flashback{/i}"
+                                            
+                            hide black
+                            
+                            hide hari
+                            
+                            show road
+                                            
+                            show lovein normal
+                            
+                            stop sound
+                            
+                            play sound ("bensound-romantic.mp3")
+                                            
+                            a "...Forever."
+                                            
+                            e "Huh?"
+                                            
+                            "They look surprised, and peer into your eyes inquisitively."
+                                            
+                            a "Ahh! Nothing!"
+                                            
+                            "You can't help but stammer, looking away and blushing heavily."
+                                                                                            
+                            a "I mean..."
+                                         
+                            a "We'll always be together. Forever."
+                                  
+                            a "That's what you said back then... And that's what I'll say now."
+                                                                                               
+                            e "Hey."
+                                    
+                            "You look up, and suddenly you're engulfed in a hug."
+                                                           
+                            e "I'll literally see you tomorrow morning if you want me to come. Don't get so sentimental on me, okay? I'm bad with this kind of stuff."
+                                                                                                                                                                      
+                            "But as these words leave their mouth, you can't help but to notice the blush staining their cheeks."                                                                                                                                          
+                        
+                            a "Jeez... I got it. See you around."
+                                                                           
+                            hide lovein                                               
+                                                                           
+                            "You squeeze them tightly and let go, turning to face the last challenge before you."                                               
+                                                                                                            
                             stop sound
                             
                             hide lovein normal 
@@ -1209,61 +1721,191 @@ label start:
                             
                             b "Since you're back here I guess you're ready to take me on."
                             
-                            a "Okay this isn't a mystery. I know who's talking."
+                            a "Okay... This isn't a mystery. I know who's talking."
                             
                             show mom
                             
                             m "Do you know how much I've missed you?"
                             
                             a "I could take a guess."
+                                                     
+                            a "Mom, I just said bye to someone I cared about a lot, so let's get on with it."                         
                             
-                            m "No matter, are you ready to battle?"
+                            m "Are you sure you're ready to battle me?"
                             
                             m "I've been waiting since you were a child for this day!"
                             
                             m "You're finally going to take over the family gym!"
                             
-                            m "Hurray let's go outside!"
+                            m "Hurray, let's go outside!"
+                                           
+                            hide mom                
                             
-                            a "Wait Mom I need time to think."
-                            
-                            a "I'll be in my room."
-                            
+                            a "Okay..."
+                                           
                             hide home
+                                           
+                            show garden
+                                           
+                            show mom               
+                                           
+                            "Your mother turns to face you."
+                                           
+                            play sound ("by.mp3")               
+                                           
+                            m "I hope you're ready for this."
+                                                             
+                            "I have no choice. I have to send out both of my Pokemon if I want to win this!"
+                                                                                                            
+                            m "Go! Kangaskhan!!!"
+                                                 
+                            show kang
+                                                 
+                            "Kangaskhan appears before you, roaring into your face!"
+                                                                                    
+                            a "UGH! THAT SMELLS!"
+                                                 
+                            a "Come on guys, let's go!"
+                                                 
+                            hide kang
+                                                 
+                            show raichu                     
+                                                 
+                            "Together, Raichu and your starter use their strongest abilities on mom's Kangaskhan!" 
+                                                                                                                  
+                            a "Good job, Raichu!!! Your Thunderbolt has the giant kangaroo reeling!"
+                                                                                                    
+                            "Mom's Kangaskhan is paralyzed!"
+                                 
+                            a "Finish the job!"
+                                 
+                            hide raichu
+                                 
+                            show mom 
+                                 
+                            m "Not so fast! Kangaskhan, eat this Cheri Berry and use Body Slam!"
+                                 
+                            "Kangaskhan eats the Cheri Berry and its paralysis is cured!"
+                                 
+                            "With a roar, mom's kangaroo charges toward your defenseless Pokemon! Your starter dodges the attack but Raichu is injured!"
+                                                                                                                                                        
+                            a "Oh no... Raichu, return!"
+                                                        
+                            "..."
+                                 
+                            show black
+                                 
+                            e "Hey! You can do it!"
+                                                   
+                            hide black
+                                                   
+                            "........"                       
+                                                   
+                            "You open your eyes to see a certain redhead standing before you!"
                             
                             hide mom
+                                                                                              
+                            show lovein normal
                             
-                            show room
+                            play sound ("by.mp3")
+                                                                                              
+                            e "Come on, I believe in you!"
+                                                          
+                            e "I know you and I know that you're stronger than this!"
+                                                              
+                            e "You can definitely defeat your mom!"                                  
                             
-                            "I need some serious advice."
+                            "They clasp your hands tightly, lending you their strength."
+                                                              
+                            a "I-"
                             
-                            "I really don't know if I have what it takes it beat mom."
+                            hide lovein normal
+                                                              
+                            "Just then, your starter Pokemon leaps up and scratches at Kangaskhan's eyes!"
                             
-                            "Maybe I should look to someone for advice."
+                            show kang
+                                                                             
+                            "{i}ROARRRRR{/i}"
+                                             
+                            "Crying in pain, the Kangaskhan falls over, pawing at its eyes."
                             
-                            menu:
-                                
-                                "Our Rival":
-                                    
-                                    jump choicer
-                                    
-                                "Devin the Bug Gym Leader":
-                                    
-                                    jump choiced
-                                    
-                                "Electra the Electric Gym Leader":
-                                    
-                                    jump choicee
-                                    
-                                "Takeo the Fighting Gym Leader":
-                                    
-                                    jump choicet
-                                    
-                      #finish choice11 solo route to takeomi island, beat rival after samurai battle.
-                      
-                      #finish end of mom gym route, get advice from any one of the mentors and beat mom. then establish love based on route.
-                                
-                                
+                            hide kang
+                                                                                            
+                            a "Ahh, good job!"
+                                              
+                            stop sound
+                            
+                            play sound ("congrat.mp3")
+                                              
+                            a "..."
+                                   
+                            "Your Pokemon leaps into your arms."
+                                                                
+                            "You turn to your mother, then to your friend, and let out a shaky laugh."
+                                                                                                      
+                            a "...Did we win?"
+                            
+                            show lovein normal
+                            
+                            e "YOU DID IT! I'M SO PROUD OF YOU!"
+                            
+                            a "OH MY GOSH!"
+                            
+                            "I leap into their arms!"
+                            
+                            a "I'm so happy right now!"
+                            
+                            "I laugh hysterically, obviously in disbelief."
+                            
+                            stop sound
+                            
+                            play sound ("bensound-romantic.mp3")
+                            
+                            e "I'm so proud of you!"
+                            
+                            "..."
+                            
+                            "They peer into my face, eyes filled with joy and pride."
+                            
+                            hide lovein normal
+                            
+                            a "Ahh..."
+                            
+                            a "Uhm, thank you... I didn't think you'd come back."
+                            
+                            show lovein normal
+                            
+                            e "How could I just leave you here?"
+                            
+                            e "What if you lost? Who's going to be there to comfort you if I'm not around?"
+                            
+                            a "...Heheh. I guess you're ri-"
+                            
+                            "..."
+                            
+                            "!!!"
+                            
+                            "I freeze as they brought their face next to mine."
+                            
+                            e "You know, I..."
+                            
+                            "My eyes widen as they whisper something in my ear."
+                            
+                            hide lovein normal
+                            
+                            "..."
+                            
+                            "My surprise turns into a blush, then into a smile."
+                            
+                            a "Hey, I know. Me too."
+                            
+                            "..."
+                            
+                            "... And this is just the beginning of my journey."
+                            
+                            return
+                            
+      
         
         
         
